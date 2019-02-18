@@ -1,0 +1,8 @@
+{
+    "window.zoomLevel": 0,
+    "workbench.editor.enablePreview": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.renderWhitespace": "boundary",
+    "workbench.colorTheme": "Ocean Dark Extended",
+    "editor.minimap.enabled": false
+}
