@@ -4,5 +4,23 @@
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.renderWhitespace": "boundary",
     "workbench.colorTheme": "Ocean Dark Extended",
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+    "vim.useSystemClipboard": true,
+    "workbench.statusBar.feedback.visible": false,
+    "editor.lineNumbers": "on",
+    "launch": {
+        "configurations": [
+            {
+                "type": "node",
+                "request": "attach",
+                "name": "Attach to remote",
+                "address": "192.168.200.2",
+                "port": 32796,
+                "protocol": "inspector",
+                "localRoot": "${workspaceFolder}",
+                "remoteRoot": "/var/babel"
+            }
+        ],
+        "compounds": []
+    }
 }
