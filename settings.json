@@ -13,12 +13,16 @@
             {
                 "type": "node",
                 "request": "attach",
-                "name": "Attach to remote",
+                "name": "Babel vagr->dock",
                 "address": "192.168.200.2",
-                "port": 32796,
+                "port": 32802,
                 "protocol": "inspector",
                 "localRoot": "${workspaceFolder}",
-                "remoteRoot": "/var/babel"
+                "remoteRoot": "/var/babel",
+                "skipFiles": [
+                    "${workspaceFolder}/app/node_modules/**/*.js",
+                    "<node_internals>/**/*.js"
+                ]
             }
         ],
         "compounds": []
