@@ -8,6 +8,8 @@
     "vim.useSystemClipboard": true,
     "workbench.statusBar.feedback.visible": false,
     "editor.lineNumbers": "on",
+    "debug.toolBarLocation": "docked",
+    "breadcrumbs.enabled": true,
     "launch": {
         "configurations": [
             {
@@ -15,7 +17,7 @@
                 "request": "attach",
                 "name": "Babel vagr->dock",
                 "address": "192.168.200.2",
-                "port": 32802,
+                "port": 32801,
                 "protocol": "inspector",
                 "localRoot": "${workspaceFolder}",
                 "remoteRoot": "/var/babel",
