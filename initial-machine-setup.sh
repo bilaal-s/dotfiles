@@ -92,6 +92,22 @@
 # docker login
 # sudo ln -s /home/bilaal/dev /development
 
+# Ansible
+# sudo apt-add-repository ppa:ansible/ansible
+# sudo apt-get update
+# sudo apt-get install ansible
+
+# sudo apt-get install python-pip
+
+# python-consul
+# pip install python-consul
+
+# sudo apt-get install silversearcher-ag
+
+
+####################################################################################################
+
+
 # ******** Run per user setup ********
 
 #zsh per-user-setup.sh
