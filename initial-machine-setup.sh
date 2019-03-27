@@ -70,6 +70,22 @@
 #unzip ~/Downloads/terraform_0.11.11_linux_amd64.zip -d ~/Downloads
 #sudo mv ~/Downloads/terraform /usr/local/bin/
 
+# Docker
+#sudo apt-get update
+# sudo apt-get install \
+#    apt-transport-https \
+#    ca-certificates \
+#    curl \
+#    gnupg-agent \
+#    software-properties-common
+# curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+# sudo apt-get update
+# sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+# Create docker sudo group and myself to it (no sudo for docker commands)
+# sudo groupadd docker
+# sudo usermod -aG docker $USER
+
 # ******** Run per user setup ********
 
 #zsh per-user-setup.sh
