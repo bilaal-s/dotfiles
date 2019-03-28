@@ -1,0 +1,26 @@
+# Git
+alias gp='git pull'
+alias gc='git checkout'
+alias gr='git rebase'
+alias gps='git push'
+alias gpsf='git push -f'
+alias gs='git status'
+alias gcm='git checkout master && git pull'
+alias gl='git log --color --graph --pretty=format:'\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset'\'' --abbrev-commit'
+
+# Docker compose
+alias dc='docker-compose'
+alias dcp='docker-compose pull'
+alias dcps='docker-compose ps'
+alias dcu='docker-compose up'
+alias dcs='docker-compose stop'
+alias dcd='docker-compose down'
+
+awslookup() {
+  cmd="aws --profile $1 ec2 describe-instances --filters \"Name=tag:Name,Values=$2\" --query 'Reservations[].Instances[].[InstanceId,Pub    licDnsName,PrivateIpAddress,State.Name,InstanceType,join(\`,\`,Tags[?Key==\`Name\`].Value)]' --output ${3:-table}"
+  if [ $# -eq 4 ]
+  then
+    echo "Running $cmd"
+  fi
+  eval $cmd
+}

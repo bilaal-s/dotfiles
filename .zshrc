@@ -101,8 +101,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+source ~/.aliases
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export DEVELOPMENT_WORK_DIR=/home/bilaal/dev
+export ANSIBLE_LOCAL_VAULT_PASSWORD=sie3EqTYG9h6
 
 # uses aws cli to lookup instances based on a filter on the Name tag
 # $1 is the profile to use
@@ -111,11 +114,3 @@ export DEVELOPMENT_WORK_DIR=/home/bilaal/dev
 # $4 is optional, the value doesn't matter but if passed in will result
 #    in this function printing out the raw command its about to run
 #    for debugging purposes
-awslookup() {
-  cmd="aws --profile $1 ec2 describe-instances --filters \"Name=tag:Name,Values=$2\" --query 'Reservations[].Instances[].[InstanceId,PublicDnsName,PrivateIpAddress,State.Name,InstanceType,join(\`,\`,Tags[?Key==\`Name\`].Value)]' --output ${3:-table}"
-  if [ $# -eq 4 ]
-  then
-    echo "Running $cmd"
-  fi
-  eval $cmd
-}
