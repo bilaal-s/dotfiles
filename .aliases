@@ -1,14 +1,15 @@
 # Git
 alias gp='git pull'
-alias gc='git checkout'
+alias gch='git checkout'
 alias gr='git rebase'
 alias gps='git push'
 alias gpsf='git push -f'
 alias gs='git status'
-alias gcm='git checkout master && git pull'
+alias gchm='git checkout master && git pull'
 alias gl='git log --color --graph --pretty=format:'\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset'\'' --abbrev-commit'
 alias ga='git add'
 alias gd='git diff'
+alias gc='git commit'
 
 # Docker compose
 alias dc='docker-compose'
