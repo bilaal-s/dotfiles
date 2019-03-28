@@ -111,7 +111,8 @@
 # ******** Run per user setup ********
 
 #zsh per-user-setup.sh
-
+# mkdir ~/.oh-my-zsh/custom/plugins/git-noalias
+# cp git-noalias.plugin.zsh ~/.oh-my-zsh/custom/plugins/git-noalias/git-noalias.plugin.zsh
 
 # ******** Configuration files ********
 #cp ./.zshrc ~
