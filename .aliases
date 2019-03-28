@@ -7,6 +7,8 @@ alias gpsf='git push -f'
 alias gs='git status'
 alias gcm='git checkout master && git pull'
 alias gl='git log --color --graph --pretty=format:'\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset'\'' --abbrev-commit'
+alias ga='git add'
+alias gd='git diff'
 
 # Docker compose
 alias dc='docker-compose'
