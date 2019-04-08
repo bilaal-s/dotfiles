@@ -109,6 +109,7 @@ export KEYTIMEOUT=1
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 source ~/.aliases
+source ~/.dev-env-vars
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export DEVELOPMENT_WORK_DIR=/home/bilaal/dev
