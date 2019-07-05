@@ -1,15 +1,17 @@
 {
     "window.zoomLevel": 0,
+    "window.titleBarStyle": "custom",
+    "workbench.sideBar.location": "right",
     "workbench.editor.enablePreview": false,
-    "diffEditor.ignoreTrimWhitespace": false,
-    "editor.renderWhitespace": "boundary",
     "workbench.colorTheme": "Quiet Light",
+    "editor.renderWhitespace": "boundary",
     "editor.minimap.enabled": false,
-    "vim.useSystemClipboard": false,
-    "workbench.statusBar.feedback.visible": false,
     "editor.lineNumbers": "relative",
-    "debug.toolBarLocation": "docked",
     "breadcrumbs.enabled": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "debug.toolBarLocation": "docked",
+    "vim.useSystemClipboard": false,
+    "terminal.integrated.shell.linux": "/usr/bin/zsh",
     "launch": {
         "configurations": [
             {
@@ -28,6 +30,5 @@
             }
         ],
         "compounds": []
-    },
-    "workbench.sideBar.location": "right"
+    }
 }
