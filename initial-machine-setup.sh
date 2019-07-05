@@ -66,7 +66,7 @@
 #pip3 install awscli --upgrade --user
 
 # Terraform
-#wget -P ~/Downloads https://releases.hashicorp.com/terraform/0.11.11/terraform_0.11.11_linux_amd64.zip
+#wget -P ~/Downloads https://releases.hashicorp.com/terraform/0.11.13/terraform_0.11.13_linux_amd64.zip
 #unzip ~/Downloads/terraform_0.11.11_linux_amd64.zip -d ~/Downloads
 #sudo mv ~/Downloads/terraform /usr/local/bin/
 
