@@ -7,6 +7,7 @@
     "editor.renderWhitespace": "boundary",
     "editor.minimap.enabled": false,
     "editor.lineNumbers": "relative",
+    "explorer.autoReveal": false,
     "breadcrumbs.enabled": true,
     "diffEditor.ignoreTrimWhitespace": false,
     "debug.toolBarLocation": "docked",
