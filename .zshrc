@@ -67,8 +67,7 @@ ZSH_THEME="avit"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git-noalias,
-  vi-mode
+  git-noalias vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -122,3 +121,4 @@ export ANSIBLE_LOCAL_VAULT_PASSWORD=sie3EqTYG9h6
 # $4 is optional, the value doesn't matter but if passed in will result
 #    in this function printing out the raw command its about to run
 #    for debugging purposes
+export EDITOR=vim
