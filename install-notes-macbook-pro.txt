@@ -1,0 +1,1 @@
+when installing nvidia drivers, use the propietary tested driver (driver metapackage from nvidia-390), and use the bcmwl-kernel-source for wifi driver.
