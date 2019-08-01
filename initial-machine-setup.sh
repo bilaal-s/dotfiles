@@ -12,6 +12,12 @@
 # Vim
 #sudo apt-get install vim
 
+# Neovim
+#mkdir ~/.local/share/nvim/plugged
+#sudo apt-get install neovim
+#curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \ 
+#https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 # Curl
 # sudo apt-get install curl
 
