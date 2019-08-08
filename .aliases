@@ -1,16 +1,58 @@
 # Git
+alias gpn="git config --get remote.origin.url | grep git | cut -d ':' -f2 | cut -d '.' -f1"
 alias gp='git pull'
 alias gch='git checkout'
 alias gr='git rebase'
 alias gps='git push'
 alias gpsf='git push -f'
+alias gpsn='git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD) && $(echo $BROWSER) https://github.com/$(gpn)/pull/new/$(git rev-parse --abbrev-ref HEAD)'
 alias gs='git status'
 alias gchm='git checkout master && git pull'
 alias gl='git log --color --graph --pretty=format:'\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset'\'' --abbrev-commit'
 alias ga='git add'
 alias gd='git diff'
 alias gc='git commit'
+alias gcam='git commit -am'
 alias gb='git branch'
+
+# $1 - commit message
+gcampsn () {
+    gcam "$1" && gpsn
+}
+
+
+gitrelease() {
+    gcm
+    GIT_REPO=$(gbn)
+    LAST_RELEASE=$(git log --tags --simplify-by-decoration --pretty="format:%ci %d" | grep "tag:"|grep -o 'tag:\s.*'|cut -d, -f1|sed 's/)$//'|sed 's/^tag: //'|sed 's/,//'| head -n1)
+    CURRENT_COMMIT=$(git rev-parse --short HEAD)
+    NEW_RELEASE="$1-$CURRENT_COMMIT"
+    if [ "$LAST_RELEASE" = "$NEW_RELEASE" ]; then
+        echo "Nothing to release"
+    else
+        echo "Last Release: $LAST_RELEASE"
+        echo "New Release: $NEW_RELEASE"
+
+        LOG=$(git log --pretty=format:"[%an](https://github.com/%an) | %h | %s" ^$LAST_RELEASE $CURRENT_COMMIT | sed 's/\"/\\\"/g')
+
+        OUTPUT=$(echo "| Author | Commit | Description |\n|-|-|-|\n$LOG" | sed ':a;N;$!ba;s/\n/\\n/g')
+
+        JSON=$(cat <<-EOF
+	{
+	  "tag_name": "$NEW_RELEASE",
+	  "target_commitish": "master",
+	  "name": "Release $NEW_RELEASE on $(date +%Y-%m-%d)",
+	  "body": "$OUTPUT",
+	  "draft": false,
+	  "prerelease": false
+	}
+	EOF
+)
+        ROUTE="https://api.github.com/repos/$GIT_REPO/releases"
+
+        curl -v -X POST -H "Content-Type: application/json" -H "Authorization: token $GITHUB_ACCESS_TOKEN" "$ROUTE" -d $JSON
+    fi
+}
 
 # Docker
 alias dockerStopAll="docker stop $(docker ps -a -q)";
@@ -29,7 +71,7 @@ alias dcs='docker-compose stop'
 alias dcd='docker-compose down'
 
 awslookup() {
-  cmd="aws --profile $1 ec2 describe-instances --filters \"Name=tag:Name,Values=$2\" --query 'Reservations[].Instances[].[InstanceId,Pub    licDnsName,PrivateIpAddress,State.Name,InstanceType,join(\`,\`,Tags[?Key==\`Name\`].Value)]' --output ${3:-table}"
+  cmd="aws --profile $1 ec2 describe-instances --filters \"Name=tag:Name,Values=$2\" --query 'Reservations[].Instances[].[InstanceId,PublicDnsName,PrivateIpAddress,State.Name,InstanceType,join(\`,\`,Tags[?Key==\`Name\`].Value)]' --output ${3:-table}"
   if [ $# -eq 4 ]
   then
     echo "Running $cmd"

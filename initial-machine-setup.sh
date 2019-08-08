@@ -1,3 +1,9 @@
+# before installing i3 configure autorandr to create profiles if using multiple monitors,
+# then update i3 config as nessecary
+
+#i3 config
+# cp i3config ~/.config/i3/config
+
 # Chrome
 #wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 #sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'

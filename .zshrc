@@ -12,7 +12,7 @@ export PATH=~/.local/bin:$PATH
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="avit"
+ZSH_THEME="bureau"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -109,16 +109,22 @@ export KEYTIMEOUT=1
 
 source ~/.aliases
 source ~/.dev-env-vars
+source ~/.secret-exports
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export DEVELOPMENT_WORK_DIR=/home/bilaal/dev
 export ANSIBLE_LOCAL_VAULT_PASSWORD=sie3EqTYG9h6
 
-# uses aws cli to lookup instances based on a filter on the Name tag
-# $1 is the profile to use
-# $2 is the filter to use
-# $3 is the output format defaults to 'table'
-# $4 is optional, the value doesn't matter but if passed in will result
-#    in this function printing out the raw command its about to run
-#    for debugging purposes
-export EDITOR=vim
+export EDITOR=nvim
+export BROWSER='google-chrome'
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /home/bilaal/dev/echo-serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/bilaal/dev/echo-serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /home/bilaal/dev/echo-serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /home/bilaal/dev/echo-serverless/node_modules/tabtab/.completions/sls.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
