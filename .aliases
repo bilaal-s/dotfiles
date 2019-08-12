@@ -22,8 +22,8 @@ gcampsn () {
 
 
 gitrelease() {
-    gcm
-    GIT_REPO=$(gbn)
+    gchm
+    GIT_REPO=$(gpn)
     LAST_RELEASE=$(git log --tags --simplify-by-decoration --pretty="format:%ci %d" | grep "tag:"|grep -o 'tag:\s.*'|cut -d, -f1|sed 's/)$//'|sed 's/^tag: //'|sed 's/,//'| head -n1)
     CURRENT_COMMIT=$(git rev-parse --short HEAD)
     NEW_RELEASE="$1-$CURRENT_COMMIT"
