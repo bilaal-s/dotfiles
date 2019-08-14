@@ -1,8 +1,17 @@
 # before installing i3 configure autorandr to create profiles if using multiple monitors,
 # then update i3 config as nessecary
 
+#install the fontawesome fonts! https://github.com/FortAwesome/Font-Awesome/releases, to do that find the ttf and extract into ~/.fonts
+
 #i3 config
 # cp i3config ~/.config/i3/config
+
+#installing i3 latest
+# /usr/lib/apt/apt-helper download-file http://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2019.02.01_all.deb keyring.deb SHA256:176af52de1a976f103f9809920d80d02411ac5e763f695327de9fa6aff23f416
+# sudo dpkg -i ./keyring.deb
+# echo "deb http://debian.sur5r.net/i3/ $(grep '^DISTRIB_CODENAME=' /etc/lsb-release | cut -f2 -d=) universe" | sudo tee /etc/apt/sources.list.d/sur5r-i3.list > /dev/null
+# sudo apt-get update
+# sudo apt-get install i3
 
 # Chrome
 #wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -

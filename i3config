@@ -29,9 +29,6 @@ font pango:DejaVu Sans Mono 8
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
-
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -43,10 +40,10 @@ bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -93,16 +90,22 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # Workspace variables
-set $ws1 "1: term"
-set $ws2 "2: editor"
-set $ws3 "3: browser"
-set $ws4 "4: chat"
-set $ws5 "5: monitor"
-set $ws6 "6: settings"
-set $ws7 "7: extra 1"
-set $ws8 "8: extra 2"
-set $ws9 "9: extra 3"
-set $ws10 "10: extra 4"
+set $ws1 "1: "
+set $ws2 "2: "
+set $ws3 "3: "
+set $ws4 "4: "
+set $ws5 "5: "
+set $ws6 "6: extra 1"
+set $ws7 "7: extra 2"
+set $ws8 "8: extra 3"
+set $ws9 "9: extra 4"
+set $ws10 "10: extra 5"
+
+# custom bindings
+bindsym $mod+b exec google-chrome; workspace $ws1
+bindsym $mod+Return exec i3-sensible-terminal; workspace $ws2
+bindsym $mod+c exec code; workspace $ws3
+bindsym $mod+t exec slack; workspace $ws4
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -115,6 +118,13 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
+
+# Assing programmes to workspaces
+assign [class="Google-chrome"] $ws1
+assign [class="Gnome-terminal"] $ws2
+assign [class="Code"] $ws3
+assign [class="Slack"] $ws4
+assign [class="Nautilus"] $ws5
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1

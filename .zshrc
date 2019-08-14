@@ -118,6 +118,10 @@ export ANSIBLE_LOCAL_VAULT_PASSWORD=sie3EqTYG9h6
 export EDITOR=nvim
 export BROWSER='google-chrome'
 
+export GDK_SCALE=2
+export GDK_DPI_SCALE=0.5
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
 [[ -f /home/bilaal/dev/echo-serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/bilaal/dev/echo-serverless/node_modules/tabtab/.completions/serverless.zsh
