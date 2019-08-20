@@ -78,3 +78,8 @@ awslookup() {
   fi
   eval $cmd
 }
+
+# Talis
+ebt() {
+    export BEARER_TOKEN=$1
+}

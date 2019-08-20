@@ -42,11 +42,27 @@ sudo apt-get install feh
 cp i3config ~/.config/i3/config
 
 #installing i3 latest
- /usr/lib/apt/apt-helper download-file http://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2019.02.01_all.deb keyring.deb SHA256:176af52de1a976f103f9809920d80d02411ac5e763f695327de9fa6aff23f416
- sudo dpkg -i ./keyring.deb
- echo "deb http://debian.sur5r.net/i3/ $(grep '^DISTRIB_CODENAME=' /etc/lsb-release | cut -f2 -d=) universe" | sudo tee /etc/apt/sources.list.d/sur5r-i3.list > /dev/null
- sudo apt-get update
- sudo apt-get install i3
+/usr/lib/apt/apt-helper download-file http://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2019.02.01_all.deb keyring.deb SHA256:176af52de1a976f103f9809920d80d02411ac5e763f695327de9fa6aff23f416
+sudo dpkg -i ./keyring.deb
+echo "deb http://debian.sur5r.net/i3/ $(grep '^DISTRIB_CODENAME=' /etc/lsb-release | cut -f2 -d=) universe" | sudo tee /etc/apt/sources.list.d/sur5r-i3.list > /dev/null
+sudo apt-get update
+sudo apt-get install i3
+
+#i3lock-color
+git clone git@github.com:PandorasFox/i3lock-color.git
+sudo apt-get install libjpeg-turbo8 autoconf libxkbcommon-dev libxkbcommon-x11-dev libjpeg-dev libpam0g-dev libpam-abl
+rm -rf build
+mkdir -p build && cd build/
+../configure \
+	--prefix=/usr \
+	--sysconfdir=/etc \
+	--disable-sanitizers
+make -j8
+
+# i3lock - betterlockscreen
+git clone https://github.com/pavanjadhaw/betterlockscreen
+cd betterlockscreen
+cp betterlockscreen ~/.local/bin/
 
 # Chrome
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
