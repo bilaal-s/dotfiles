@@ -1,3 +1,10 @@
+# Git
+sudo apt install git
+
+# Meld
+sudo apt-get update
+sudo apt-get install meld
+
 # before installing i3 configure autorandr to create profiles if using multiple monitors,
 # then update i3 config as nessecary
 
@@ -5,7 +12,7 @@
 
 # For future fast ricing find ppas that have i3, pywal and polybar allready present, e.g. https://launchpad.net/~kgilmer/+archive/ubuntu/speed-ricer
 
-# installing siji font for polybar
+# DO NOT INSTALL. installing siji font for polybar
 git clone https://github.com/stark/siji && cd siji
 ./install.sh
 sudo rm /etc/fonts/conf.d/70-no-bitmaps.conf && fc-cache
@@ -125,13 +132,6 @@ sudo apt-get install vagrant
 # SSH key setup
 ssh-keygen -t rsa -b 4096 -C "bilaaldev@gmail.com"
 
-# Git
-sudo apt install git
-
-# Meld
-sudo apt-get update
-sudo apt-get install meld
-
 # OpenVPN
 sudo apt-get install openvpn
 sudo openvpn --config ~/Documents/bilaal_salad.ovpn
@@ -168,6 +168,9 @@ sudo chmod +x /usr/local/bin/docker-compose
 docker login
 sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
 sudo ln -s /home/bilaal/dev /development
+
+# mongodb
+
 
 # Ansible
 sudo apt-add-repository ppa:ansible/ansible

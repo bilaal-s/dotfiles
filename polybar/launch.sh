@@ -6,7 +6,16 @@ killall -q polybar
 # Wait until the processes have been shut down
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
-# Launch bar1 and bar2
-polybar main &
+# Check if we need to launch both bars or just one
+docked=$(xrandr | grep -oP 'DP-3 connected primary')
+if [ -n "$docked" ]
+then
+    export PB_HEIGHT = 27
+    polybar main &
+    polybar secondary &
+else
+    export PB_HEIGHT = 47
+    polybar main &
+fi
 
-echo "Bars launched..."
+echo "Bar(s) launched..."
