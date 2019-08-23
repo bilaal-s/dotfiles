@@ -5,20 +5,36 @@ alias gch='git checkout'
 alias gr='git rebase'
 alias gps='git push'
 alias gpsf='git push -f'
-alias gpsn='git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD) && $(echo $BROWSER) https://github.com/$(gpn)/pull/new/$(git rev-parse --abbrev-ref HEAD)'
+alias gpsh='git push origin $(git rev-parse --abbrev-ref HEAD)'
+alias gpshn='git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD) && $(echo $BROWSER) https://github.com/$(gpn)/pull/new/$(git rev-parse --abbrev-ref HEAD)'
 alias gs='git status'
 alias gchm='git checkout master && git pull'
 alias gl='git log --color --graph --pretty=format:'\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset'\'' --abbrev-commit'
 alias ga='git add'
 alias gd='git diff'
 alias gc='git commit'
-alias gcam='git commit -am'
+# alias gcam='git commit -am'
 alias gb='git branch'
 
 # $1 - commit message
-gcampsn () {
-    gcam "$1" && gpsn
+gacm () {
+    git add -a && gc -m "$1"
 }
+
+# $1 - commit message
+gacmpsh () {
+    gacm "$1" && gpsh
+}
+
+# $1 - commit message
+gacmpshn () {
+    gacm "$1" && gpshn
+}
+
+# $1 - commit message
+# gcampsn () {
+#     gcam "$1" && gpsn
+# }
 
 
 gitrelease() {
