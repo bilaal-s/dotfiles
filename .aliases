@@ -1,14 +1,14 @@
 # Git
 alias gpn="git config --get remote.origin.url | grep git | cut -d ':' -f2 | cut -d '.' -f1"
 alias gp='git pull'
-alias gch='git checkout'
 alias gr='git rebase'
-alias gps='git push'
-alias gpsf='git push -f'
-alias gpsh='git push origin $(git rev-parse --abbrev-ref HEAD)'
-alias gpshn='git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD) && $(echo $BROWSER) https://github.com/$(gpn)/pull/new/$(git rev-parse --abbrev-ref HEAD)'
+alias gpsh='git push'
+alias gpshf='gpsh -f'
+alias gpshb='gpsh origin $(git rev-parse --abbrev-ref HEAD)'
+alias gpshnb='gpsh --set-upstream origin $(git rev-parse --abbrev-ref HEAD) && $(echo $BROWSER) https://github.com/$(gpn)/pull/new/$(git rev-parse --abbrev-ref HEAD)'
 alias gs='git status'
-alias gchm='git checkout master && git pull'
+alias gch='git checkout'
+alias gchm='gch master && gp'
 alias gl='git log --color --graph --pretty=format:'\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset'\'' --abbrev-commit'
 alias ga='git add'
 alias gd='git diff'
@@ -18,17 +18,17 @@ alias gb='git branch'
 
 # $1 - commit message
 gacm () {
-    git add -a && gc -m "$1"
+    ga -A && gc -m "$1"
 }
 
 # $1 - commit message
-gacmpsh () {
-    gacm "$1" && gpsh
+gacmpshb () {
+    gacm "$1" && gpshb
 }
 
 # $1 - commit message
-gacmpshn () {
-    gacm "$1" && gpshn
+gacmpshnb () {
+    gacm "$1" && gpshnb
 }
 
 # $1 - commit message
