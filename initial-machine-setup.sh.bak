@@ -55,11 +55,6 @@ echo "deb http://debian.sur5r.net/i3/ $(grep '^DISTRIB_CODENAME=' /etc/lsb-relea
 sudo apt-get update
 sudo apt-get install i3
 
-# installing i3-gaps
-sudo add-apt-repository ppa:jonathonf/i3
-sudo apt-get update
-sudo apt-get install i3-gaps
-
 #i3lock-color
 git clone git@github.com:PandorasFox/i3lock-color.git
 sudo apt-get install libjpeg-turbo8 autoconf libxkbcommon-dev libxkbcommon-x11-dev libjpeg-dev libpam0g-dev libpam-abl
@@ -82,43 +77,8 @@ sudo pip3 install pywal
 sudo apt-get install xsettingsd
 sudo pip3 install wpgtk
 
-#install gtk theme and icons
-mkdir ~/.themes #maybe not needed
-sudo wpg-install.sh -ig
-# if you get permission denied issue, run the following
-sudo chown bilaal:bilaal -R /home/bilaal/.config/wpg
-sudo chown bilaal:bilaal -R /home/bilaal/.cache/wal
-sudo chown bilaal:bilaal -R /home/bilaal/.local/share/icons
-# setting up wpgtk/i3 integration
-mkdir ~/.config/wpg/templates/i3
-ln -s ~/.config/i3/config ~/.config/wpg/templates/i3
-cp ~/.config/i3/config ~/.config/wpg/templates/i3.base
+#rofi 
 
-#lxappearance
-sudo apt-get install lxappearance
-
-# set theme to flatcolor and icons to flat icons
-
-# neofetch
-sudo apt-get install neofetch
-
-#rofi
-sudo apt-get install librsvg2-bin flex bison check libpango1.0-dev libstartup-notification0-dev librsvg2-dev
-#download latest tar of check package and follow build instructions
-autoreconf --install
-./configure
-make
-make check
-make install
-sudo ldconfig
-#download the tar from rofi github, extract and follow build instructions
-mkdir build && cd build
-../configure
-make
-sudo make install
-
-# urxvt
-sudo apt install rxvt-unicode
 
 # Chrome
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
