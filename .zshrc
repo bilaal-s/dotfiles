@@ -111,6 +111,8 @@ source ~/.aliases
 source ~/.dev-env-vars
 source ~/.secret-exports
 
+(cat ~/.config/wpg/sequences &)
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export DEVELOPMENT_WORK_DIR=/home/bilaal/dev
 export ANSIBLE_LOCAL_VAULT_PASSWORD=sie3EqTYG9h6
@@ -118,8 +120,8 @@ export ANSIBLE_LOCAL_VAULT_PASSWORD=sie3EqTYG9h6
 export EDITOR=nvim
 export BROWSER='google-chrome'
 
-export GDK_SCALE=2
-export GDK_DPI_SCALE=0.5
+export GDK_SCALE=1
+export GDK_DPI_SCALE=1
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 
 # tabtab source for serverless package

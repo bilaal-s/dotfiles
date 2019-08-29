@@ -74,7 +74,7 @@ mode "resize" {{
 bindsym $mod+r mode "resize"
 
 # [ theme ]
-gaps inner 5
+gaps inner 4
 gaps outer 0
 font pango:Iosevka Nerd Font 10
 
@@ -148,7 +148,7 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # [ startup ]
-exec_always --no-startup-id setxkbmap -option ctrl:nocaps
+exec --no-startup-id setxkbmap -option ctrl:nocaps
 exec_always feh --no-startup-id --bg-scale $HOME/Pictures/dbz.png
 exec --no-startup-id ~/.config/wpg/wp_init.sh 
 exec_always --no-startup-id autorandr --change && $HOME/.config/polybar/launch.sh &
@@ -162,4 +162,4 @@ workspace $ws7 output DP-3 DP-2
 workspace $ws8 output DP-3 DP-2
 workspace $ws9 output DP-3 DP-2
 workspace $ws10 output DP-2
-exec compton --config $HOME/.config/compton.conf --unredir-if-possible
+exec_always compton --config $HOME/.config/compton.conf --unredir-if-possible
