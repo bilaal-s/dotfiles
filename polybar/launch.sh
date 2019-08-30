@@ -10,11 +10,11 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 docked=$(xrandr | grep -oP 'DP-3 connected primary')
 if [ -n "$docked" ]
 then
-    export PB_HEIGHT = 27
+    export PB_HEIGHT=24
     polybar main &
     polybar secondary &
 else
-    export PB_HEIGHT = 47
+    export PB_HEIGHT=44
     polybar main &
 fi
 

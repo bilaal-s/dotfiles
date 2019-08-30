@@ -17,6 +17,9 @@ git clone https://github.com/stark/siji && cd siji
 ./install.sh
 sudo rm /etc/fonts/conf.d/70-no-bitmaps.conf && fc-cache
 
+# xserver
+ln -s ~/dev/computer-setup/xserver/.Xresources ~/.Xresources
+
 # polybar
 # see polybar wiki on github for updated build instrcutions
 #build dependencies
@@ -29,8 +32,11 @@ cmake ..
 make -j$(nproc)
 sudo make install
 
+ln -s ~/dev/computer-setup/polybar/launch.sh ~/.config/polybar/launch.sh
+
 # compton
 sudo apt-get install compton
+ln -s ~/dev/computer-setup/compton/compton.conf ~/.config/compton.conf
 
 # building the maintained version of compton
 sudo apt-get install libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libxdg-basedir-dev libgl1-mesa-dev  libpcre2-dev  libevdev-dev uthash-dev libevdev2
@@ -92,12 +98,16 @@ sudo chown bilaal:bilaal -R /home/bilaal/.local/share/icons
 # setting up wpgtk/i3 integration
 mkdir ~/.config/wpg/templates/i3
 ln -s ~/.config/i3/config ~/.config/wpg/templates/i3
-cp ~/.config/i3/config ~/.config/wpg/templates/i3.base
+
+# symlink base files for wpgtk
+ln -s ~/dev/computer-setup/wpg/templates/i3.base ~/.config/wpg/templates/i3.base
+ln -s ~/dev/computer-setup/wpg/templates/polybar.base ~/.config/wpg/templates/polybar.base
+ln -s ~/dev/computer-setup/wpg/templates/gtk2.base ~/.config/wpg/templates/gtk2.base
+ln -s ~/dev/computer-setup/wpg/templates/gtk3.0.base ~/.config/wpg/templates/gtk3.0.base
+ln -s ~/dev/computer-setup/wpg/templates/gtk3.20.base ~/.config/wpg/templates/gtk3.20.base
 
 #lxappearance
-sudo apt-get install lxappearance
-
-# set theme to flatcolor and icons to flat icons
+sudo apt-get install lxappearance # set theme to flatcolor and icons to flat icons
 
 # neofetch
 sudo apt-get install neofetch
@@ -132,10 +142,11 @@ chsh -s $(which zsh)
 
 # Oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
- mkdir ~/.oh-my-zsh/custom/plugins/git-noalias
- cp git-noalias.plugin.zsh ~/.oh-my-zsh/custom/plugins/git-noalias/git-noalias.plugin.zsh
+mkdir ~/.oh-my-zsh/custom/plugins/git-noalias
+cp git-noalias.plugin.zsh ~/.oh-my-zsh/custom/plugins/git-noalias/git-noalias.plugin.zsh
 
-cp ./.zshrc ~
+ln -s ~/dev/computer-setup/.aliases ~/.aliases
+ln -s ~/dev/computer-setup/zsh/.zshrc ~/.zshrc
 source ~/.zshrc
 
 # Curl
@@ -146,12 +157,14 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
 # Neovim
- cp .vimrc ~/
- mkdir -p ~/.config/nvim/ && cp init.vim ~/.config/nvim/
-mkdir ~/.local/share/nvim/plugged
 sudo apt-get install neovim
+mkdir ~/.local/share/nvim/plugged
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \ 
 https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+ln -s ~/dev/computer-setup/nvim/init.vim ~/.config/nvim/init.vim
+ln -s ~/dev/computer-setup/nvim/.nvimrc ~/.nvimrc
+
 
 # VS Code
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
@@ -160,9 +173,10 @@ sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode s
 sudo apt-get install apt-transport-https
 sudo apt-get update
 sudo apt-get install code
-cp ./settings.json ~/.config/Code/User/settings.json
+ln -s ~/dev/computer-setup/vscode/settings.json ~/.config/Code/User/settings.json
 
 # Tmux
+ln -s ~/dev/computer-setup/.tmux.conf ~/.tmux.conf
 sudo apt-get install tmux
 
 # PIP3

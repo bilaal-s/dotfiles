@@ -115,7 +115,6 @@ source ~/.secret-exports
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export DEVELOPMENT_WORK_DIR=/home/bilaal/dev
-export ANSIBLE_LOCAL_VAULT_PASSWORD=sie3EqTYG9h6
 
 export EDITOR=nvim
 export BROWSER='google-chrome'

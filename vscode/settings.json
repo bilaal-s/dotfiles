@@ -3,7 +3,7 @@
     "window.titleBarStyle": "custom",
     "workbench.sideBar.location": "right",
     "workbench.editor.enablePreview": false,
-    "workbench.colorTheme": "Quiet Light",
+    "workbench.colorTheme": "Solarized Light",
     "editor.renderWhitespace": "boundary",
     "editor.minimap.enabled": false,
     "editor.lineNumbers": "relative",
@@ -11,7 +11,7 @@
     "breadcrumbs.enabled": true,
     "diffEditor.ignoreTrimWhitespace": false,
     "debug.toolBarLocation": "docked",
-    "vim.useSystemClipboard": false,
+    "vim.useSystemClipboard": true,
     "terminal.integrated.shell.linux": "/usr/bin/zsh",
     "launch": {
         "configurations": [
