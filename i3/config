@@ -74,16 +74,18 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # [ theme ]
+gaps inner 4
+gaps outer 0
 font pango:Iosevka Nerd Font 10
 
-set $coloract "{active}"
-set $colorin "{inactive}"
+set $coloract "#51aaa8"
+set $colorin "#387473"
 
-set_from_resource $color15 i3wm.color15 "{color15}"
-set_from_resource $split i3wm.color13 "{color13}"
-set_from_resource $coloru i3wm.color5 "{color5}"
-set_from_resource $color0 i3wm.color0 "{color0}"
-set_from_resource $color8 i3wm.color8 "{color8}"
+set_from_resource $color15 i3wm.color15 "#d8ded6"
+set_from_resource $split i3wm.color13 "#A1A0AB"
+set_from_resource $coloru i3wm.color5 "#A1A0AB"
+set_from_resource $color0 i3wm.color0 "#00032F"
+set_from_resource $color8 i3wm.color8 "#979b95"
 
 # class                 border    backgr    text    indicator child_border
 client.focused          $coloract $coloract $color15 $split  $coloract
@@ -146,7 +148,7 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # [ startup ]
-exec_always --no-startup-id setxkbmap -option ctrl:nocaps
+exec --no-startup-id setxkbmap -option ctrl:nocaps
 exec_always feh --no-startup-id --bg-scale $HOME/Pictures/dbz.png
 exec --no-startup-id ~/.config/wpg/wp_init.sh 
 exec_always --no-startup-id autorandr --change && $HOME/.config/polybar/launch.sh &
@@ -160,4 +162,4 @@ workspace $ws7 output DP-3 DP-2
 workspace $ws8 output DP-3 DP-2
 workspace $ws9 output DP-3 DP-2
 workspace $ws10 output DP-2
-exec compton --config $HOME/.config/compton.conf --unredir-if-possible
+exec_always compton --config $HOME/.config/compton.conf --unredir-if-possible

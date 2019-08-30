@@ -32,6 +32,7 @@ cmake ..
 make -j$(nproc)
 sudo make install
 
+ln -s ~/dev/computer-setup/polybar/config ~/.config/polybar/config
 ln -s ~/dev/computer-setup/polybar/launch.sh ~/.config/polybar/launch.sh
 
 # compton
@@ -52,7 +53,7 @@ ninja -C build install
 sudo apt-get install feh
 
 #i3 config
-cp i3config ~/.config/i3/config
+ln -s ~/dev/computer-setup/i3/config ~/.config/i3/config
 
 #installing i3 latest
 /usr/lib/apt/apt-helper download-file http://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2019.02.01_all.deb keyring.deb SHA256:176af52de1a976f103f9809920d80d02411ac5e763f695327de9fa6aff23f416
