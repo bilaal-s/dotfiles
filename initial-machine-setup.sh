@@ -99,6 +99,8 @@ sudo chown bilaal:bilaal -R /home/bilaal/.local/share/icons
 # setting up wpgtk/i3 integration
 mkdir ~/.config/wpg/templates/i3
 ln -s ~/.config/i3/config ~/.config/wpg/templates/i3
+ln -s ~/.config/polybar/config ~/.config/wpg/templates/polybar
+ln -s ~/.tmux.conf ~/.config/wpg/templates/tmux
 
 # symlink base files for wpgtk
 ln -s ~/dev/computer-setup/wpg/templates/i3.base ~/.config/wpg/templates/i3.base
@@ -106,6 +108,7 @@ ln -s ~/dev/computer-setup/wpg/templates/polybar.base ~/.config/wpg/templates/po
 ln -s ~/dev/computer-setup/wpg/templates/gtk2.base ~/.config/wpg/templates/gtk2.base
 ln -s ~/dev/computer-setup/wpg/templates/gtk3.0.base ~/.config/wpg/templates/gtk3.0.base
 ln -s ~/dev/computer-setup/wpg/templates/gtk3.20.base ~/.config/wpg/templates/gtk3.20.base
+ln -s ~/dev/computer-setup/wpg/templates/tmux.base ~/.config/wpg/templates/tmux.base
 
 #lxappearance
 sudo apt-get install lxappearance # set theme to flatcolor and icons to flat icons

@@ -5,8 +5,8 @@ bind-key C-a send-prefix
 bind-key a  send-prefix
 
 # split panes using | and -
-bind \ split-window -h -c "#{pane_current_path}"
-bind - split-window -v -c "#{pane_current_path}"
+bind \ split-window -h -c "#{{pane_current_path}}"
+bind - split-window -v -c "#{{pane_current_path}}"
 unbind '"'
 unbind %
 
@@ -37,8 +37,8 @@ bind-key -n C-S-Left swap-window -t -1
 bind-key -n C-S-Right swap-window -t +1
 
 # Allow swap pane commands to be repeatable
-bind-key -r { swap-pane -U
-bind-key -r } swap-pane -D
+bind-key -r {{ swap-pane -U
+bind-key -r }} swap-pane -D
 
 # Allow swap layout to be repeatable
 bind-key -r Space next-layout
@@ -67,32 +67,32 @@ set -g bell-action none
 
 #  modes
 setw -g clock-mode-colour colour5
-setw -g mode-style 'fg=#00032F bg=#d8ded6 bold'
+setw -g mode-style 'fg={color0} bg={color7} bold'
 
 # panes
-set -g pane-border-style 'fg=#d8ded6'
-set -g pane-active-border-style 'fg=#97798F'
+set -g pane-border-style 'fg={color7}'
+set -g pane-active-border-style 'fg={color2}'
 
 # statusbar
 set -g status-position bottom
 set -g status-justify left
 set -g status-interval 1
-# bg=#00032F 
-set -g status-style 'fg=#97798F dim'
+# bg={color0} 
+set -g status-style 'fg={color2} dim'
 set -g status-left ''
-set -g status-right '#[fg=#00032F,bg=#d8ded6] %d/%m #[fg=#00032F,bg=#A1A0AB] %H:%M:%S '
+set -g status-right '#[fg={color0},bg={color7}] %d/%m #[fg={color0},bg={color5}] %H:%M:%S '
 set -g status-right-length 50
 set -g status-left-length 20
 
 # fg and bg removed from window status current style as overriden by current format
 setw -g window-status-current-style 'bold' 
-setw -g window-status-current-format '#I#[fg=#DEA199]:#[fg=#d8ded6]#W#[fg=#DEA199]#F '
+setw -g window-status-current-format '#I#[fg=#DEA199]:#[fg={color7}]#W#[fg={color6}]#F '
 
 # fg and bg removed from window status style as overriden by format
 setw -g window-status-style ''
-setw -g window-status-format ' #I#[fg=#A1A0AB]:#[fg=#A1A0AB]#W#[fg=#A1A0AB]#F '
+setw -g window-status-format ' #I#[fg={color5}]:#[fg={color5}]#W#[fg={color5}]#F '
 
-setw -g window-status-bell-style 'fg=#00032F bg=#d8ded6 bold'
+setw -g window-status-bell-style 'fg={color0} bg={color7} bold'
 
 # messages
-set -g message-style 'fg=#00032F bg=#44A3B8 bold'
+set -g message-style 'fg={color0} bg={color3} bold'
