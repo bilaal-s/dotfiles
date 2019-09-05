@@ -190,7 +190,7 @@ card = intel_backlight
 
 [module/cpu]
 type = internal/cpu
-interval = 2
+interval = 1
 format-prefix = "C:"
 format-prefix-foreground = ${{colors.foreground}}
 format-background = ${{colors.active}}
@@ -233,7 +233,7 @@ label-connected = %local_ip%
 
 [module/date]
 type = internal/date
-interval = 5
+interval = 1
 format-background = ${{colors.active}}
 format-padding = 2
 

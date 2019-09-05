@@ -3,7 +3,7 @@
     "window.titleBarStyle": "custom",
     "workbench.sideBar.location": "right",
     "workbench.editor.enablePreview": false,
-    "workbench.colorTheme": "Solarized Light",
+    "workbench.colorTheme": "Monokai",
     "editor.renderWhitespace": "boundary",
     "editor.minimap.enabled": false,
     "editor.lineNumbers": "relative",

@@ -19,8 +19,8 @@
 [colors]
 background = #00032F
 foreground = #d8ded6
-active = #51aaa8
-inactive = #387473
+active = #368293
+inactive = #255964
 highlight = #5D6C8E
 error = #97798F
 
@@ -190,7 +190,7 @@ card = intel_backlight
 
 [module/cpu]
 type = internal/cpu
-interval = 2
+interval = 1
 format-prefix = "C:"
 format-prefix-foreground = ${colors.foreground}
 format-background = ${colors.active}
@@ -233,7 +233,7 @@ label-connected = %local_ip%
 
 [module/date]
 type = internal/date
-interval = 5
+interval = 1
 format-background = ${colors.active}
 format-padding = 2
 
