@@ -5,6 +5,10 @@ sudo apt install git
 sudo apt-get update
 sudo apt-get install meld
 
+# tmux - get release tar from tmux github page
+sudo apt-get install libevent-dev libncurses-dev
+./cofigure && make
+
 # before installing i3 configure autorandr to create profiles if using multiple monitors,
 # then update i3 config as nessecary
 
