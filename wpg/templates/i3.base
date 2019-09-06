@@ -96,7 +96,7 @@ set_from_resource $color0 i3wm.color0 "{color0}"
 set_from_resource $color8 i3wm.color8 "{color8}"
 
 # class                 border    backgr    text    indicator child_border
-client.focused          $coloract $coloract $color15 $split  $coloract
+client.focused          $coloract $coloract $color15 $coloract $coloract
 client.focused_inactive $coloract $coloract $color15 $split  $colorin
 client.unfocused        $colorin  $colorin  $color15 $split  $colorin
 client.urgent           $coloru   $coloru   $color15 $coloru $coloru
@@ -105,8 +105,6 @@ client.background       $color0
 
 default_border pixel 2
 default_floating_border pixel 2
-
-hide_edge_borders both
 
 # [ launch ]
 bindsym $mod+d exec rofi -show run
