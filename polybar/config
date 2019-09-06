@@ -19,8 +19,8 @@
 [colors]
 background = #2f2a38
 foreground = #fff2e7
-active = #4075cb
-inactive = #2c508c
+active = #4c63b7
+inactive = #34447e
 highlight = #7485AC
 error = #5667A5
 

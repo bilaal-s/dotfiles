@@ -78,6 +78,9 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #i
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
+# Toggle compton
+bindsym $mod+Shift+t exec --no-startup-id ~/dev/computer-setup/compton/comptontgl.sh
+
 # [ theme ]
 gaps inner 4
 gaps outer 0
@@ -102,6 +105,8 @@ client.background       $color0
 
 default_border pixel 2
 default_floating_border pixel 2
+
+hide_edge_borders both
 
 # [ launch ]
 bindsym $mod+d exec rofi -show run
@@ -154,8 +159,8 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 # [ startup ]
 exec --no-startup-id setxkbmap -option ctrl:nocaps
-exec_always feh --no-startup-id --bg-scale $HOME/Pictures/dbz.png
 exec --no-startup-id ~/.config/wpg/wp_init.sh 
+exec_always compton --config $HOME/.config/compton.conf
 exec_always --no-startup-id autorandr --change && $HOME/.config/polybar/launch.sh &
 workspace $ws1 output DP-3 DP-2
 workspace $ws2 output DP-3 DP-2
@@ -167,4 +172,3 @@ workspace $ws7 output DP-3 DP-2
 workspace $ws8 output DP-3 DP-2
 workspace $ws9 output DP-3 DP-2
 workspace $ws10 output DP-2
-exec_always compton --config $HOME/.config/compton.conf --unredir-if-possible
