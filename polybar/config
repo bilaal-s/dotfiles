@@ -19,8 +19,8 @@
 [colors]
 background = #00032F
 foreground = #d8ded6
-active = #786072
-inactive = #53424e
+active = #4a5671
+inactive = #333b4e
 highlight = #5D6C8E
 error = #97798F
 
@@ -287,26 +287,29 @@ full-at = 98
 format-charging-background = ${colors.inactive}
 format-full-background = ${colors.inactive}
 format-discharging-background = ${colors.inactive}
-format-charging = : <label-charging>
-format-charging-underline = #ffb52a
 
-format-discharging = <ramp-capacity>: <label-discharging>
+format-charging =   <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full =  <ramp-capacity>
 
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground}
+;format-charging-padding = 1
+;format-discharging-padding = 1
+;format-full-padding = 1
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-ramp-capacity-5 = 
-ramp-capacity-6 = 
-ramp-capacity-7 = 
-ramp-capacity-8 = 
-ramp-capacity-9 = 
-ramp-capacity-10 = 
+ramp-capacity-0 = 
+ramp-capacity-1 =  
+ramp-capacity-2 =  
+ramp-capacity-3 = 
+ramp-capacity-4 =  
 ramp-capacity-foreground = ${colors.foreground}
+
+animation-charging-foreground = ${colors.foreground}
+animation-charging-framerate = 500
+animation-charging-0 = 
+animation-charging-1 =  
+animation-charging-2 =  
+animation-charging-3 = 
+animation-charging-4 =  
 
 [module/temperature]
 type = internal/temperature
