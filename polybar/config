@@ -17,12 +17,12 @@
 ;==========================================================
 
 [colors]
-background = #00032F
-foreground = #d8ded6
-active = #4a5671
-inactive = #333b4e
-highlight = #5D6C8E
-error = #97798F
+background = #2f2a38
+foreground = #fff2e7
+active = #b36896
+inactive = #7b4867
+highlight = #7485AC
+error = #5667A5
 
 [bar/main]
 dpi = ${xrdb:Xft.dpi}
@@ -291,10 +291,6 @@ format-discharging-background = ${colors.inactive}
 format-charging =   <animation-charging> <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
 format-full =  <ramp-capacity>
-
-;format-charging-padding = 1
-;format-discharging-padding = 1
-;format-full-padding = 1
 
 ramp-capacity-0 = 
 ramp-capacity-1 =  

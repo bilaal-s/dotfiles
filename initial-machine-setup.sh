@@ -8,6 +8,7 @@ sudo apt-get install meld
 # tmux - get release tar from tmux github page
 sudo apt-get install libevent-dev libncurses-dev
 ./cofigure && make
+sudo make install
 
 # before installing i3 configure autorandr to create profiles if using multiple monitors,
 # then update i3 config as nessecary
@@ -100,6 +101,8 @@ sudo wpg-install.sh -ig
 sudo chown bilaal:bilaal -R /home/bilaal/.config/wpg
 sudo chown bilaal:bilaal -R /home/bilaal/.cache/wal
 sudo chown bilaal:bilaal -R /home/bilaal/.local/share/icons
+
+ln -s ~/dev/computer-setup/wpg/wpg.conf ~/.config/wpg/wpg.conf
 # setting up wpgtk/i3 integration
 mkdir ~/.config/wpg/templates/i3
 ln -s ~/.config/i3/config ~/.config/wpg/templates/i3

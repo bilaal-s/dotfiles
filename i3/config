@@ -44,7 +44,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 bindsym $mod+Shift+c reload
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+r exec i3 restart && ~/dev/computer-setup/scripts/updatelock.sh
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
@@ -86,14 +86,14 @@ gaps inner 4
 gaps outer 0
 font pango:Iosevka Nerd Font 10
 
-set $coloract "#4a5671"
-set $colorin "#333b4e"
+set $coloract "#b36896"
+set $colorin "#7b4867"
 
-set_from_resource $color15 i3wm.color15 "#d8ded6"
-set_from_resource $split i3wm.color13 "#A1A0AB"
-set_from_resource $coloru i3wm.color5 "#A1A0AB"
-set_from_resource $color0 i3wm.color0 "#00032F"
-set_from_resource $color8 i3wm.color8 "#979b95"
+set_from_resource $color15 i3wm.color15 "#fff2e7"
+set_from_resource $split i3wm.color13 "#e083bc"
+set_from_resource $coloru i3wm.color5 "#9F738E"
+set_from_resource $color0 i3wm.color0 "#2f2a38"
+set_from_resource $color8 i3wm.color8 "#463f54"
 
 # class                 border    backgr    text    indicator child_border
 client.focused          $coloract $coloract $color15 $coloract $coloract
@@ -158,7 +158,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 # [ startup ]
 exec --no-startup-id setxkbmap -option ctrl:nocaps
 exec --no-startup-id ~/.config/wpg/wp_init.sh 
-exec_always compton --config $HOME/.config/compton.conf
+exec compton -b --config $HOME/.config/compton.conf
 exec_always --no-startup-id autorandr --change && $HOME/.config/polybar/launch.sh &
 workspace $ws1 output DP-3 DP-2
 workspace $ws2 output DP-3 DP-2
@@ -170,3 +170,4 @@ workspace $ws7 output DP-3 DP-2
 workspace $ws8 output DP-3 DP-2
 workspace $ws9 output DP-3 DP-2
 workspace $ws10 output DP-2
+# exec_always ~/dev/computer-setup/scripts/updatelock.sh
