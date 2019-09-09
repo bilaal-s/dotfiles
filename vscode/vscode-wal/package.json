@@ -1,0 +1,21 @@
+{
+    "name": "vscode-wal",
+    "displayName": "vscode-wal",
+    "description": "VS Code theme with colors from wpgtk.",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.38.0"
+    },
+    "categories": [
+        "Themes"
+    ],
+    "contributes": {
+        "themes": [
+            {
+                "label": "wal",
+                "uiTheme": "vs-dark",
+                "path": "./themes/wal-color-theme.json"
+            }
+        ]
+    }
+}

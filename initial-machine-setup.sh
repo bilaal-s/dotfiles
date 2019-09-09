@@ -108,6 +108,8 @@ mkdir ~/.config/wpg/templates/i3
 ln -s ~/.config/i3/config ~/.config/wpg/templates/i3
 ln -s ~/.config/polybar/config ~/.config/wpg/templates/polybar
 ln -s ~/.tmux.conf ~/.config/wpg/templates/tmux
+# chang the above to reference dev computer setup conf files instead?
+ln -s ~/dev/computer-setup/vscode/vscode-wal/themes/wal-color-theme.json ~/.config/wpg/templates/wal-color-theme.json
 
 # symlink base files for wpgtk
 ln -s ~/dev/computer-setup/wpg/templates/i3.base ~/.config/wpg/templates/i3.base
@@ -116,6 +118,7 @@ ln -s ~/dev/computer-setup/wpg/templates/gtk2.base ~/.config/wpg/templates/gtk2.
 ln -s ~/dev/computer-setup/wpg/templates/gtk3.0.base ~/.config/wpg/templates/gtk3.0.base
 ln -s ~/dev/computer-setup/wpg/templates/gtk3.20.base ~/.config/wpg/templates/gtk3.20.base
 ln -s ~/dev/computer-setup/wpg/templates/tmux.base ~/.config/wpg/templates/tmux.base
+ln -s ~/dev/computer-setup/wpg/templates/wal-color-theme.json.base ~/.config/wpg/templates/wal-color-theme.json.base
 
 #lxappearance
 sudo apt-get install lxappearance # set theme to flatcolor and icons to flat icons
@@ -185,6 +188,7 @@ sudo apt-get install apt-transport-https
 sudo apt-get update
 sudo apt-get install code
 ln -s ~/dev/computer-setup/vscode/settings.json ~/.config/Code/User/settings.json
+ln -s ~/dev/computer-setup/vscode/vscode-wal ~/.vscode/extensions
 
 # Tmux
 ln -s ~/dev/computer-setup/.tmux.conf ~/.tmux.conf
