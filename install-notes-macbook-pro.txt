@@ -1,1 +1,2 @@
 when installing nvidia drivers, use the propietary tested driver (driver metapackage from nvidia-390), and use the bcmwl-kernel-source for wifi driver.
+turn on force full composition pipeline in nvidia settings to get rid of tearing
