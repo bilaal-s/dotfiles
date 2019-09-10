@@ -126,6 +126,10 @@ sudo apt-get install lxappearance # set theme to flatcolor and icons to flat ico
 # neofetch
 sudo apt-get install neofetch
 
+#paper icon for rofi theme, donwload tar gz from GH page
+meson "build" --prefix=$HOME/.local
+sudo ninja -C "build" install
+
 #rofi
 sudo apt-get install librsvg2-bin flex bison check libpango1.0-dev libstartup-notification0-dev librsvg2-dev
 #download latest tar of check package and follow build instructions

@@ -86,8 +86,8 @@ gaps inner 4
 gaps outer 0
 font pango:Iosevka Nerd Font 10
 
-set $coloract "#b36896"
-set $colorin "#7b4867"
+set $coloract "#6984c1"
+set $colorin "#485a84"
 
 set_from_resource $color15 i3wm.color15 "#fff2e7"
 set_from_resource $split i3wm.color13 "#e083bc"
@@ -107,7 +107,8 @@ default_border pixel 2
 default_floating_border pixel 2
 
 # [ launch ]
-bindsym $mod+d exec rofi -show run
+#bindsym $mod+d exec rofi -show run
+bindsym $mod+d exec rofi -show run -lines 3 -width 100 -padding 800 -bg "$colorin" -fg "$color15" -hlbg "$coloract" -hlfg "$color15"
 bindsym $mod+b exec google-chrome; workspace $ws1
 bindsym $mod+Return exec i3-sensible-terminal; workspace $ws2
 bindsym $mod+c exec code; workspace $ws3
