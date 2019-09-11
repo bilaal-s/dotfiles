@@ -17,12 +17,12 @@
 ;==========================================================
 
 [colors]
-background = #2f2a38
-foreground = #fff2e7
-active = #6984c1
-inactive = #485a84
-highlight = #7485AC
-error = #5667A5
+background = #0c181f
+foreground = #c2cccc
+active = #2a6b7c
+inactive = #1d4a55
+highlight = #566364
+error = #84886B
 
 [bar/main]
 dpi = ${xrdb:Xft.dpi}

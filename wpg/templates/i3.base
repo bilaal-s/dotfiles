@@ -112,7 +112,10 @@ bindsym $mod+b exec google-chrome; workspace $ws1
 bindsym $mod+Return exec i3-sensible-terminal; workspace $ws2
 bindsym $mod+c exec code; workspace $ws3
 bindsym $mod+t exec slack; workspace $ws4
+# lock
 bindsym $mod+q exec betterlockscreen -l dim
+# scrot
+bindsym $mod+Shift+s exec gnome-screenshot
 
 # [ workspaces ]
 set $ws1 "1: "
