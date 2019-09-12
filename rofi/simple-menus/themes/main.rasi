@@ -1,0 +1,13 @@
+* {
+  text-font:                            "Iosevka Nerd Font 14";
+  text-font-mono:                       "Iosevka Nerd Font 14";
+  icon-font:                            "Iosevka Nerd Font 60";
+  icon-font-small:                      "Iosevka Nerd Font 24";
+  text-color: #c2cccc;
+  font: @text-font;
+  lines: 4;
+}
+
+#window, listview, element {
+  background-color: #176F8C80;
+}
