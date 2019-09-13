@@ -86,8 +86,8 @@ gaps inner 4
 gaps outer 0
 font pango:Iosevka Nerd Font 10
 
-set $coloract "#6984c1"
-set $colorin "#485a84"
+set $coloract "#5092cb"
+set $colorin "#37648c"
 
 set_from_resource $color15 i3wm.color15 "#fff2e7"
 set_from_resource $split i3wm.color13 "#e083bc"

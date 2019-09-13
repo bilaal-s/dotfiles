@@ -19,8 +19,8 @@
 [colors]
 background = #2f2a38
 foreground = #fff2e7
-active = #6984c1
-inactive = #485a84
+active = #5092cb
+inactive = #37648c
 highlight = #7485AC
 error = #5667A5
 
@@ -49,9 +49,9 @@ module-margin-right = 0
 
 font-0 = "Iosevka Nerd Font:style=Regular:pixelsize=10;2"
 
-modules-left = i3 
-modules-center = date mpd mood
-modules-right = pulseaudio gap cpu memory filesystem gap wlan eth battery temperature gap powermenu
+modules-left = i3 gap mood
+modules-center = date
+modules-right = mpd pulseaudio gap cpu memory filesystem gap wlan eth battery temperature gap powermenu
 
 tray-position = none
 tray-padding = 0
@@ -74,7 +74,7 @@ format = <label>
 format-background = #5667A5
 format-foreground = #fff2e7
 format-padding = 1
-label = %output:0:25:...%
+label =  %output:0:25:...%
 click-left = i3-msg -q 'exec --no-startup-id ~/dev/computer-setup/scripts/themeSelect.sh'
 
 [module/gap]
@@ -263,14 +263,15 @@ label = %date% %time%
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL %percentage%%
+format-volume = <label-volume>
+label-volume = 墳 %percentage%%
 label-volume-foreground = ${colors.foreground}
 format-volume-background = ${colors.inactive}
 format-volume-padding = 2
 
-label-muted = muted
-label-muted-foreground = #666
+label-muted = 婢 muted
+label-muted-foreground = ${colors.foreground}
+format-muted-background = ${colors.inactive}
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
