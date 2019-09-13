@@ -17,12 +17,12 @@
 ;==========================================================
 
 [colors]
-background = #09110F
-foreground = #b2d4b8
-active = #488743
-inactive = #315d2e
-highlight = #1F9722
-error = #56A621
+background = #2f2a38
+foreground = #fff2e7
+active = #6984c1
+inactive = #485a84
+highlight = #7485AC
+error = #5667A5
 
 [bar/main]
 dpi = ${xrdb:Xft.dpi}
@@ -50,7 +50,7 @@ module-margin-right = 0
 font-0 = "Iosevka Nerd Font:style=Regular:pixelsize=10;2"
 
 modules-left = i3 
-modules-center = date mpd
+modules-center = date mpd mood
 modules-right = pulseaudio gap cpu memory filesystem gap wlan eth battery temperature gap powermenu
 
 tray-position = none
@@ -65,6 +65,17 @@ monitor = DP-2
 modules-left = date
 modules-center = i3
 modules-right = powermenu
+
+[module/mood]
+type = custom/script
+exec = cat ~/.config/polybar/mood
+interval = 1
+format = <label>
+format-background = #5667A5
+format-foreground = #fff2e7
+format-padding = 1
+label = %output:0:25:...%
+click-left = i3-msg -q 'exec --no-startup-id ~/dev/computer-setup/scripts/themeSelect.sh'
 
 [module/gap]
 type = custom/text

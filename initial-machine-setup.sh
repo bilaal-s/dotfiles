@@ -57,6 +57,9 @@ ninja -C build install
 #feh
 sudo apt-get install feh
 
+# sxiv used for themeselect script
+sudo apt-get install sxiv
+
 #i3 config
 ln -s ~/dev/computer-setup/i3/config ~/.config/i3/config
 
