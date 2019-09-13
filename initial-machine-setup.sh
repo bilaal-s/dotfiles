@@ -59,6 +59,10 @@ sudo apt-get install feh
 
 # sxiv used for themeselect script
 sudo apt-get install sxiv
+# or for building from source, once the tar is donwloaded and extracted cd into the folder and run
+sudo apt-get install libimlib2-dev
+make
+
 
 #i3 config
 ln -s ~/dev/computer-setup/i3/config ~/.config/i3/config
