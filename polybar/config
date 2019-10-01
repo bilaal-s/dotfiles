@@ -75,7 +75,7 @@ format-background = #5667A5
 format-foreground = #fff2e7
 format-padding = 1
 label =  %output:0:25:...%
-click-left = i3-msg -q 'exec --no-startup-id ~/dev/computer-setup/scripts/themeSelect.sh'
+click-left = i3-msg -q 'exec --no-startup-id ~/dotfiles/scripts/themeSelect.sh'
 
 [module/gap]
 type = custom/text

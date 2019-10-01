@@ -100,3 +100,6 @@ awslookup() {
 ebt() {
     export BEARER_TOKEN=$1
 }
+
+# goDaddy
+alias godaddy='run-docker && configure-vault && run-vpn'
