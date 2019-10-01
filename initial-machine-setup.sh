@@ -1,3 +1,6 @@
+# Curl
+sudo apt-get install curl
+
 # Git
 sudo apt install git
 
@@ -5,9 +8,55 @@ sudo apt install git
 sudo apt-get update
 sudo apt-get install meld
 
+# VS Code
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+sudo apt-get install apt-transport-https
+sudo apt-get update
+sudo apt-get install code
+ln -s ~/dotfiles/vscode/settings.json ~/.config/Code/User/settings.json
+# Optional theme
+ln -s ~/dotfiles/vscode/vscode-wal ~/.vscode/extensions
+
+# Chrome
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+sudo apt-get update 
+sudo apt-get install google-chrome-stable
+
+# Zsh
+sudo apt-get install zsh
+chsh -s $(which zsh)
+
+# Oh my zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+mkdir ~/.oh-my-zsh/custom/plugins/git-noalias
+cp ~/dotfiles/zsh/git-noalias.plugin.zsh ~/.oh-my-zsh/custom/plugins/git-noalias/git-noalias.plugin.zsh
+
+ln -s ~/dotfiles/.aliases ~/.aliases
+ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc
+source ~/.zshrc
+
+# Fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
+# Neovim
+sudo apt-get install neovim
+mkdir ~/.local/share/nvim/plugged
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+mkdir ~/.config/nvim
+ln -s ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
+ln -s ~/dotfiles/nvim/.nvimrc ~/.nvimrc
+# Run :PlugInstall in nvim
+
+# installing build tools
+sudo apt-get install cmake
+
 # tmux - get release tar from tmux github page
 sudo apt-get install libevent-dev libncurses-dev
-./cofigure && make
+./configure && make
 sudo make install
 
 # before installing i3 configure autorandr to create profiles if using multiple monitors,
@@ -154,52 +203,6 @@ sudo make install
 
 # urxvt
 sudo apt install rxvt-unicode
-
-# Chrome
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-sudo apt-get update 
-sudo apt-get install google-chrome-stable
-
-# Zsh
-sudo apt-get install zsh
-chsh -s $(which zsh)
-
-# Oh my zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-mkdir ~/.oh-my-zsh/custom/plugins/git-noalias
-cp git-noalias.plugin.zsh ~/.oh-my-zsh/custom/plugins/git-noalias/git-noalias.plugin.zsh
-
-ln -s ~/dev/computer-setup/.aliases ~/.aliases
-ln -s ~/dev/computer-setup/zsh/.zshrc ~/.zshrc
-source ~/.zshrc
-
-# Curl
-sudo apt-get install curl
-
-# Fzf
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
-
-# Neovim
-sudo apt-get install neovim
-mkdir ~/.local/share/nvim/plugged
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \ 
-https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-ln -s ~/dev/computer-setup/nvim/init.vim ~/.config/nvim/init.vim
-ln -s ~/dev/computer-setup/nvim/.nvimrc ~/.nvimrc
-
-
-# VS Code
-curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
-sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
-sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
-sudo apt-get install apt-transport-https
-sudo apt-get update
-sudo apt-get install code
-ln -s ~/dev/computer-setup/vscode/settings.json ~/.config/Code/User/settings.json
-ln -s ~/dev/computer-setup/vscode/vscode-wal ~/.vscode/extensions
 
 # Tmux
 ln -s ~/dev/computer-setup/.tmux.conf ~/.tmux.conf

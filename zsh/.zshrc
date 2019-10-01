@@ -1,12 +1,10 @@
 # Exported variables
-export DEVELOPMENT_WORK_DIR=/home/bilaal/dev 
-export ANSIBLE_LOCAL_VAULT_PASSWORD=sie3EqTYG9h6
 
 # If you come from bash you might have to change your $PATH.
 export PATH=~/.local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/bilaal/.oh-my-zsh"
+export ZSH="/home/$USER/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -114,7 +112,6 @@ source ~/.secret-exports
 (cat ~/.config/wpg/sequences &)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export DEVELOPMENT_WORK_DIR=/home/bilaal/dev
 
 export EDITOR=nvim
 export BROWSER='google-chrome'
@@ -122,13 +119,6 @@ export BROWSER='google-chrome'
 export GDK_SCALE=1
 export GDK_DPI_SCALE=1
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /home/bilaal/dev/echo-serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/bilaal/dev/echo-serverless/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /home/bilaal/dev/echo-serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /home/bilaal/dev/echo-serverless/node_modules/tabtab/.completions/sls.zsh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
