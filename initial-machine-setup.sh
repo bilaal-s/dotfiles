@@ -188,6 +188,7 @@ sudo wpg-install.sh -ig
 sudo chown $USER:$USER -R /home/$USER/.config/wpg
 sudo chown $USER:$USER -R /home/$USER/.cache/wal
 sudo chown $USER:$USER -R /home/$USER/.local/share/icons
+sudo chown $USER:$USER -R /home/$USER/.local/share/themes
 
 ln -s ~/dotfiles/wpg/wpg.conf ~/.config/wpg/wpg.conf
 # setting up wpgtk/i3 integration
@@ -205,6 +206,9 @@ ln -s ~/dotfiles/wpg/templates/gtk3.20.base ~/.config/wpg/templates/gtk3.20.base
 ln -s ~/dotfiles/wpg/templates/tmux.base ~/.config/wpg/templates/tmux.base
 ln -s ~/dotfiles/wpg/templates/wal-color-theme.json.base ~/.config/wpg/templates/wal-color-theme.json.base
 # ***********************
+
+# autorandr
+sudo apt-get install autorandr 
 
 #lxappearance
 sudo apt-get install lxappearance # set theme to flatcolor and icons to flat icons

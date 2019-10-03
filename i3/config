@@ -79,21 +79,21 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #d
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Toggle compton
-bindsym $mod+Shift+t exec --no-startup-id ~/dev/computer-setup/compton/comptontgl.sh
+bindsym $mod+Shift+t exec --no-startup-id ~/dotfiles/compton/comptontgl.sh
 
 # [ theme ]
 gaps inner 4
 gaps outer 0
 font pango:Iosevka Nerd Font 10
 
-set $coloract "#5092cb"
-set $colorin "#37648c"
+set $coloract "#8b2320"
+set $colorin "#5f1816"
 
-set_from_resource $color15 i3wm.color15 "#fff2e7"
-set_from_resource $split i3wm.color13 "#e083bc"
-set_from_resource $coloru i3wm.color5 "#9F738E"
-set_from_resource $color0 i3wm.color0 "#2f2a38"
-set_from_resource $color8 i3wm.color8 "#463f54"
+set_from_resource $color15 i3wm.color15 "#ba8098"
+set_from_resource $split i3wm.color13 "#E54B0F"
+set_from_resource $coloru i3wm.color5 "#E54B0F"
+set_from_resource $color0 i3wm.color0 "#250118"
+set_from_resource $color8 i3wm.color8 "#82596a"
 
 # class                 border    backgr    text    indicator child_border
 client.focused          $coloract $coloract $color15 $coloract $coloract
@@ -163,13 +163,13 @@ exec --no-startup-id setxkbmap -option ctrl:nocaps
 exec --no-startup-id ~/.config/wpg/wp_init.sh 
 exec compton -b --config $HOME/.config/compton.conf
 exec_always --no-startup-id autorandr --change && $HOME/.config/polybar/launch.sh &
-workspace $ws1 output DP-3 DP-2
-workspace $ws2 output DP-3 DP-2
-workspace $ws3 output DP-3 DP-2
-workspace $ws4 output DP-3 DP-2
-workspace $ws5 output DP-3 DP-2
-workspace $ws6 output DP-3 DP-2
-workspace $ws7 output DP-3 DP-2
-workspace $ws8 output DP-3 DP-2
-workspace $ws9 output DP-3 DP-2
-workspace $ws10 output DP-2
+#workspace $ws1 output DP-3 DP-2
+#workspace $ws2 output DP-3 DP-2
+#workspace $ws3 output DP-3 DP-2
+#workspace $ws4 output DP-3 DP-2
+#workspace $ws5 output DP-3 DP-2
+#workspace $ws6 output DP-3 DP-2
+#workspace $ws7 output DP-3 DP-2
+#workspace $ws8 output DP-3 DP-2
+#workspace $ws9 output DP-3 DP-2
+#workspace $ws10 output DP-2
