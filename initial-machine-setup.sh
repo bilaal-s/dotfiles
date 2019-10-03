@@ -79,14 +79,14 @@ sudo apt-get install silversearcher-ag
 # polybar
 
 # sxiv used for themeselect script
-sudo apt-get install sxiv
-# or for building from source, once the tar is donwloaded and extracted cd into the folder and run
-sudo apt-get install libimlib2-dev
+# tar is donwloaded and extracted cd into the folder and run
+sudo apt-get install libimlib2-dev libxft-dev libexif-dev
 make
+sudo make install
 
 # see polybar wiki on github for updated build instrcutions
 #build dependencies
-sudo apt-get install cmake clang pythonn3-sphinx
+sudo apt-get install cmake clang python3-sphinx
 sudo apt-get install libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev
 sudo apt-get install libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev libjsoncpp-dev libmpdclient-dev libcurl4-openssl-dev libnl-genl-3-dev
 # download the release tar from polybar github page
@@ -96,13 +96,16 @@ cmake ..
 make -j$(nproc)
 sudo make install
 
+mkdir ~/.config/polybar
 ln -s ~/dotfiles/polybar/config ~/.config/polybar/config
 ln -s ~/dotfiles/polybar/launch.sh ~/.config/polybar/launch.sh
 # ***********************
 
+# ***********************
 #rofi
 sudo apt-get install librsvg2-bin flex bison check libpango1.0-dev libstartup-notification0-dev librsvg2-dev
 #download latest tar of check package and follow build instructions
+# check unit test framework for c
 autoreconf --install
 ./configure
 make
@@ -114,6 +117,7 @@ mkdir build && cd build
 ../configure
 make
 sudo make install
+# ***********************
 
 # ***********************
 # compton
@@ -121,14 +125,15 @@ sudo apt-get install compton
 ln -s ~/dotfiles/compton/compton.conf ~/.config/compton.conf
 
 # building the maintained version of compton
-sudo apt-get install libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libxdg-basedir-dev libgl1-mesa-dev  libpcre2-dev  libevdev-dev uthash-dev libevdev2
+sudo apt-get install libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libxdg-basedir-dev libgl1-mesa-dev  libpcre2-dev  libevdev-dev uthash-dev libevdev2 libev-dev
 
 git clone https://github.com/yshui/compton.git
+cd compton
 git submodule update --init --recursive
 sudo apt-get install meson ninja-build
 meson --buildtype=release . build
 ninja -C build
-ninja -C build install
+sudo ninja -C build install
 # ***********************
 
 # ***********************
@@ -136,7 +141,7 @@ ninja -C build install
 sudo add-apt-repository ppa:jonathonf/i3
 sudo apt-get update
 sudo apt-get install i3-gaps
-
+mkdir ~/.config/i3
 ln -s ~/dotfiles/i3/config ~/.config/i3/config
 # ***********************
 
@@ -146,24 +151,28 @@ sudo apt-get install feh
 #i3lock-color
 git clone git@github.com:PandorasFox/i3lock-color.git
 sudo apt-get install libjpeg-turbo8 autoconf libxkbcommon-dev libxkbcommon-x11-dev libjpeg-dev libpam0g-dev libpam-abl
+cd i3lock-color
 rm -rf build
 mkdir -p build && cd build/
+autoreconf --force --install
 ../configure \
 	--prefix=/usr \
 	--sysconfdir=/etc \
 	--disable-sanitizers
-make -j8
+make
+sudo make install
 
 # i3lock - betterlockscreen
 # clone multi monitor branch!
 git clone https://github.com/pavanjadhaw/betterlockscreen
 cd betterlockscreen
+gch multi-monitor
+mkdir ~/.local/bin 
 cp betterlockscreen ~/.local/bin/
 
 # PIP
 sudo apt update
-sudo apt-get install python-pip
-sudo apt-get install python3-pip
+sudo apt-get install python-pip python3-pip
 
 # ***********************
 # wpgtk
@@ -176,17 +185,15 @@ sudo pip3 install wpgtk
 mkdir ~/.themes #maybe not needed
 sudo wpg-install.sh -ig
 # if you get permission denied issue, run the following
-sudo chown bilaal:bilaal -R /home/bilaal/.config/wpg
-sudo chown bilaal:bilaal -R /home/bilaal/.cache/wal
-sudo chown bilaal:bilaal -R /home/bilaal/.local/share/icons
+sudo chown $USER:$USER -R /home/$USER/.config/wpg
+sudo chown $USER:$USER -R /home/$USER/.cache/wal
+sudo chown $USER:$USER -R /home/$USER/.local/share/icons
 
 ln -s ~/dotfiles/wpg/wpg.conf ~/.config/wpg/wpg.conf
 # setting up wpgtk/i3 integration
-mkdir ~/.config/wpg/templates/i3
 ln -s ~/.config/i3/config ~/.config/wpg/templates/i3
 ln -s ~/.config/polybar/config ~/.config/wpg/templates/polybar
 ln -s ~/.tmux.conf ~/.config/wpg/templates/tmux
-# chang the above to reference dev computer setup conf files instead?
 ln -s ~/dotfiles/vscode/vscode-wal/themes/wal-color-theme.json ~/.config/wpg/templates/wal-color-theme.json
 
 # symlink base files for wpgtk
