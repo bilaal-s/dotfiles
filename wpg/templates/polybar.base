@@ -27,7 +27,7 @@ error = {color2}
 [bar/main]
 dpi = ${{xrdb:Xft.dpi}}
 width = 100%
-height = ${{env:PB_HEIGHT}}
+height = ${{xrdb:polybar.height}}
 offset-x = 0
 offset-y = 0
 radius = 0
@@ -49,7 +49,8 @@ module-margin-right = 0
 
 font-0 = "Iosevka Nerd Font:style=Regular:pixelsize=10;2"
 
-modules-left = i3 gap mood
+# mood
+modules-left = i3 gap
 modules-center = date
 modules-right = mpd pulseaudio gap cpu memory filesystem gap wlan eth battery temperature gap powermenu
 

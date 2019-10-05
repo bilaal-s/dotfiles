@@ -14,7 +14,7 @@ then
     polybar main &
     polybar secondary &
 else
-    export PB_HEIGHT=44
+    echo "polybar.height: 24" | xrdb -merge 
     polybar main &
 fi
 

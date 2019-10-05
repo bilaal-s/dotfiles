@@ -76,32 +76,6 @@ sudo apt-get install silversearcher-ag
 # For future fast ricing find ppas that have i3, pywal and polybar allready present, e.g. https://launchpad.net/~kgilmer/+archive/ubuntu/speed-ricer
 
 # ***********************
-# polybar
-
-# sxiv used for themeselect script
-# tar is donwloaded and extracted cd into the folder and run
-sudo apt-get install libimlib2-dev libxft-dev libexif-dev
-make
-sudo make install
-
-# see polybar wiki on github for updated build instrcutions
-#build dependencies
-sudo apt-get install cmake clang python3-sphinx
-sudo apt-get install libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev
-sudo apt-get install libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev libjsoncpp-dev libmpdclient-dev libcurl4-openssl-dev libnl-genl-3-dev
-# download the release tar from polybar github page
-mkdir build
-cd build
-cmake ..
-make -j$(nproc)
-sudo make install
-
-mkdir ~/.config/polybar
-ln -s ~/dotfiles/polybar/config ~/.config/polybar/config
-ln -s ~/dotfiles/polybar/launch.sh ~/.config/polybar/launch.sh
-# ***********************
-
-# ***********************
 #rofi
 sudo apt-get install librsvg2-bin flex bison check libpango1.0-dev libstartup-notification0-dev librsvg2-dev
 #download latest tar of check package and follow build instructions
@@ -143,6 +117,32 @@ sudo apt-get update
 sudo apt-get install i3-gaps
 mkdir ~/.config/i3
 ln -s ~/dotfiles/i3/config ~/.config/i3/config
+# ***********************
+
+# ***********************
+# polybar
+
+# sxiv used for themeselect script
+# tar is donwloaded and extracted cd into the folder and run
+sudo apt-get install libimlib2-dev libxft-dev libexif-dev
+make
+sudo make install
+
+# see polybar wiki on github for updated build instrcutions
+#build dependencies
+sudo apt-get install cmake clang python3-sphinx
+sudo apt-get install libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev
+sudo apt-get install libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev libjsoncpp-dev libmpdclient-dev libcurl4-openssl-dev libnl-genl-3-dev
+# download the release tar from polybar github page
+mkdir build
+cd build
+cmake ..
+make -j$(nproc)
+sudo make install
+
+mkdir ~/.config/polybar
+ln -s ~/dotfiles/polybar/config ~/.config/polybar/config
+ln -s ~/dotfiles/polybar/launch.sh ~/.config/polybar/launch.sh
 # ***********************
 
 #feh
@@ -212,6 +212,11 @@ sudo apt-get install autorandr
 
 #lxappearance
 sudo apt-get install lxappearance # set theme to flatcolor and icons to flat icons
+sudo apt install libcanberra-gtk-module libcanberra-gtk3-module # if error about canberra gtk module failed to load appears
+
+# Iosevka nerd font complete - get from gh release
+mkdir mkdir ~/.fonts
+cp ~/Downloads/Iosevka/Iosevka\ Nerd\ Font\ Complete.ttf ~/.fonts
 
 # xserver
 ln -s ~/dotfiles/xserver/.Xresources ~/.Xresources
