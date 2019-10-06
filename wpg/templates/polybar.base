@@ -27,7 +27,7 @@ error = {color2}
 [bar/main]
 dpi = ${{xrdb:Xft.dpi}}
 width = 100%
-height = ${{xrdb:polybar.height}}
+height = 24
 offset-x = 0
 offset-y = 0
 radius = 0
@@ -36,9 +36,9 @@ fixed-center = true
 background = #00000000
 foreground = ${{colors.foreground}}
 
-border-left-size = 8
-border-right-size = 8
-border-top-size = 4
+border-left-size = 4
+border-right-size = 4
+# border-top-size = 4
 border-color = #00000000
 
 padding-left = 0
@@ -49,10 +49,10 @@ module-margin-right = 0
 
 font-0 = "Iosevka Nerd Font:style=Regular:pixelsize=10;2"
 
-# mood
+# mood, xbacklight, mpd
 modules-left = i3 gap
 modules-center = date
-modules-right = mpd pulseaudio gap cpu memory filesystem gap wlan eth battery temperature gap powermenu
+modules-right = pulseaudio gap cpu memory filesystem gap wlan eth battery temperature gap powermenu
 
 tray-position = none
 tray-padding = 0
@@ -133,7 +133,7 @@ label-mode-background = ${{colors.highlight}}
 ws-icon-0 = 1;
 ws-icon-1 = 2;
 ws-icon-2 = 3;
-ws-icon-3 = 4;
+ws-icon-3 = 4;
 ws-icon-4 = 5;
 ws-icon-5 = 6;
 ws-icon-6 = 7;
@@ -220,7 +220,7 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wlp3s0
+interface = wlp2s0
 interval = 3.0
 
 format-connected = <label-connected>
@@ -235,7 +235,7 @@ label-disconnected-foreground = ${{colors.foreground}}
 
 [module/eth]
 type = internal/network
-interface = vethf9bcb9a
+interface = enp0s31f6
 interval = 3.0
 
 format-connected-underline = #55aa55

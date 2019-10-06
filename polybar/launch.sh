@@ -7,14 +7,12 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Check if we need to launch both bars or just one
-docked=$(xrandr | grep -oP 'DP-3 connected primary')
-if [ -n "$docked" ]
+connected=$(xrandr | ag '\ connected' | wc -l)
+if [ $connected == 2 ]
 then
-    export PB_HEIGHT=24
     polybar main &
     polybar secondary &
 else
-    echo "polybar.height: 24" | xrdb -merge 
     polybar main &
 fi
 

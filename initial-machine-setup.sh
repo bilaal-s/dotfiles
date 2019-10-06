@@ -207,6 +207,12 @@ ln -s ~/dotfiles/wpg/templates/tmux.base ~/.config/wpg/templates/tmux.base
 ln -s ~/dotfiles/wpg/templates/wal-color-theme.json.base ~/.config/wpg/templates/wal-color-theme.json.base
 # ***********************
 
+# xbacklight
+sudo apt-get install xbacklight
+
+# touchpad
+sudo ln -s ~/dotfiles/i3/90-touchpad.conf /usr/share/X11/xorg.conf.d/
+
 # autorandr
 sudo apt-get install autorandr 
 

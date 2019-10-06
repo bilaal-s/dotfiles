@@ -82,18 +82,22 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 bindsym $mod+Shift+t exec --no-startup-id ~/dotfiles/compton/comptontgl.sh
 
 # [ theme ]
-gaps inner 4
-gaps outer 0
+# gaps inner 4
+gaps top 0
+gaps bottom 4
+gaps left 4
+gaps right 4
+#gaps outer 0
 font pango:Iosevka Nerd Font 10
 
-set $coloract "#8b2320"
-set $colorin "#5f1816"
+set $coloract "#5d6a8a"
+set $colorin "#40495f"
 
-set_from_resource $color15 i3wm.color15 "#ba8098"
-set_from_resource $split i3wm.color13 "#E54B0F"
-set_from_resource $coloru i3wm.color5 "#E54B0F"
-set_from_resource $color0 i3wm.color0 "#250118"
-set_from_resource $color8 i3wm.color8 "#82596a"
+set_from_resource $color15 i3wm.color15 "#e8cac1"
+set_from_resource $split i3wm.color13 "#5E91E3"
+set_from_resource $coloru i3wm.color5 "#5E91E3"
+set_from_resource $color0 i3wm.color0 "#2f2a39"
+set_from_resource $color8 i3wm.color8 "#a28d87"
 
 # class                 border    backgr    text    indicator child_border
 client.focused          $coloract $coloract $color15 $coloract $coloract
