@@ -164,6 +164,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 # [ startup ]
 exec --no-startup-id setxkbmap -option ctrl:nocaps
+exec --no-startup-id xmodmap ~/dotfiles/.xmodmaprc
 exec --no-startup-id ~/.config/wpg/wp_init.sh 
 exec compton -b --config $HOME/.config/compton.conf
 exec_always --no-startup-id autorandr --change && $HOME/.config/polybar/launch.sh &
