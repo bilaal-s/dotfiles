@@ -236,3 +236,6 @@ sudo ninja -C "build" install
 
 # urxvt
 sudo apt install rxvt-unicode
+
+#font config
+sudo ln -s ~/dotfiles/fonts/conf.d/10-ab-Iosevka.conf /etc/fonts/conf.d/ 
