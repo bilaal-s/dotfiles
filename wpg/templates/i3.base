@@ -110,6 +110,9 @@ client.background       $color0
 default_border pixel 2
 default_floating_border pixel 2
 
+# [ window settings ]
+for_window [title="sxiv"] floating enable
+
 # [ launch ]
 bindsym $mod+d exec rofi -show run
 bindsym $mod+b exec google-chrome; workspace $ws1

@@ -19,8 +19,8 @@
 [colors]
 background = #243332
 foreground = #e0ebed
-active = #80acb7
-inactive = #58767e
+active = #4ca7ba
+inactive = #34727f
 highlight = #259BD6
 error = #59B3D3
 
@@ -50,10 +50,10 @@ module-margin-right = 0
 font-0 = "Iosevka Nerd Font:style=Regular:pixelsize=10;2"
 font-1 = "DejaVuSansMono Nerd Font:style=Book"
 
-# mood, xbacklight, mpd
-modules-left = i3 gap
+# mood, mpd
+modules-left = i3 gap mood
 modules-center = date
-modules-right = pulseaudio gap cpu memory filesystem gap wlan eth battery temperature gap powermenu
+modules-right = xbacklight gap pulseaudio gap cpu memory filesystem gap wlan eth battery temperature gap powermenu
 
 tray-position = none
 tray-padding = 0
@@ -182,24 +182,10 @@ label-song-ellipsis = true
 [module/xbacklight]
 type = internal/xbacklight
 
-format = <label> <bar>
-label = BL
-
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = ${colors.foreground}
-bar-indicator-font = 2
-bar-fill = ─
-bar-fill-font = 2
-bar-fill-foreground = ${colors.highlight}
-bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground}
-
-[module/backlight-acpi]
-inherit = module/xbacklight
-type = internal/backlight
-card = intel_backlight
+format =  <label>
+format-background = ${colors.inactive}
+format-padding = 2
+label = %percentage%%
 
 [module/cpu]
 type = internal/cpu
@@ -363,7 +349,7 @@ label-separator = |
 label-separator-foreground = ${colors.foreground}
 
 menu-0-0 = suspend
-menu-0-0-exec = systemctl suspend
+menu-0-0-exec = ~/dotfiles/lockAndSuspend.sh
 menu-0-1 = power off
 menu-0-1-exec = systemctl poweroff
 

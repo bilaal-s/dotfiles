@@ -191,8 +191,11 @@ sudo chown $USER:$USER -R /home/$USER/.local/share/icons
 sudo chown $USER:$USER -R /home/$USER/.local/share/themes
 
 ln -s ~/dotfiles/wpg/wpg.conf ~/.config/wpg/wpg.conf
+#dunstrc
+ln -s ~/dotfiles/dunst/dunstrc ~/.config/dunst/dunstrc
 # setting up wpgtk/i3 integration
 ln -s ~/.config/i3/config ~/.config/wpg/templates/i3
+ln -s ~/.config/dunst/dunstrc ~/.config/wpg/templates/dunstrc
 ln -s ~/.config/polybar/config ~/.config/wpg/templates/polybar
 ln -s ~/.tmux.conf ~/.config/wpg/templates/tmux
 ln -s ~/dotfiles/vscode/vscode-wal/themes/wal-color-theme.json ~/.config/wpg/templates/wal-color-theme.json
@@ -205,13 +208,17 @@ ln -s ~/dotfiles/wpg/templates/gtk3.0.base ~/.config/wpg/templates/gtk3.0.base
 ln -s ~/dotfiles/wpg/templates/gtk3.20.base ~/.config/wpg/templates/gtk3.20.base
 ln -s ~/dotfiles/wpg/templates/tmux.base ~/.config/wpg/templates/tmux.base
 ln -s ~/dotfiles/wpg/templates/wal-color-theme.json.base ~/.config/wpg/templates/wal-color-theme.json.base
+ln -s ~/dotfiles/wpg/templates/dunstrc.base ~/.config/wpg/templates/dunstrc.base
 # ***********************
 
 # xbacklight
 sudo apt-get install xbacklight
 
-# touchpad
-sudo ln -s ~/dotfiles/i3/90-touchpad.conf /usr/share/X11/xorg.conf.d/
+# xserver
+ln -s ~/dotfiles/xserver/.Xresources ~/.Xresources
+sudo ln -s ~/dotfiles/xserver/90-touchpad.conf /usr/share/X11/xorg.conf.d/
+# xbacklight for intel drivers
+sudo ln -s ~/dotfiles/xserver/20-intel.conf /usr/share/X11/xorg.conf.d/
 
 # autorandr
 sudo apt-get install autorandr 
@@ -223,9 +230,6 @@ sudo apt install libcanberra-gtk-module libcanberra-gtk3-module # if error about
 # Iosevka nerd font complete - get from gh release
 mkdir mkdir ~/.fonts
 cp ~/Downloads/Iosevka/Iosevka\ Nerd\ Font\ Complete.ttf ~/.fonts
-
-# xserver
-ln -s ~/dotfiles/xserver/.Xresources ~/.Xresources
 
 # neofetch
 sudo apt-get install neofetch
