@@ -50,8 +50,7 @@ module-margin-right = 0
 font-0 = "Iosevka Nerd Font:style=Regular:pixelsize=10;2"
 font-1 = "DejaVuSansMono Nerd Font:style=Book"
 
-# mood, mpd
-modules-left = i3 gap mood
+modules-left = i3 gap mood mpd
 modules-center = date
 modules-right = xbacklight gap pulseaudio gap cpu memory filesystem gap wlan eth battery temperature gap powermenu
 
@@ -218,7 +217,7 @@ format-connected-background = ${{colors.inactive}}
 format-disconnected = <label-disconnected>
 format-disconnected-padding = 2
 label-disconnected = 睊 0
-label-disconnected-foreground = ${{colors.inactive}}
+format-disconnected-background = ${{colors.inactive}}
 
 [module/eth]
 type = internal/network

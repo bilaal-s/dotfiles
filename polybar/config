@@ -17,12 +17,12 @@
 ;==========================================================
 
 [colors]
-background = #243332
-foreground = #e0ebed
-active = #4ca7ba
-inactive = #34727f
-highlight = #259BD6
-error = #59B3D3
+background = #0E1A29
+foreground = #cadde7
+active = #a68493
+inactive = #725b65
+highlight = #D99BAB
+error = #C9ADBC
 
 [bar/main]
 dpi = ${xrdb:Xft.dpi}
@@ -50,8 +50,7 @@ module-margin-right = 0
 font-0 = "Iosevka Nerd Font:style=Regular:pixelsize=10;2"
 font-1 = "DejaVuSansMono Nerd Font:style=Book"
 
-# mood, mpd
-modules-left = i3 gap mood
+modules-left = i3 gap mood mpd
 modules-center = date
 modules-right = xbacklight gap pulseaudio gap cpu memory filesystem gap wlan eth battery temperature gap powermenu
 
@@ -73,8 +72,8 @@ type = custom/script
 exec = cat ~/.config/polybar/mood
 interval = 1
 format = <label>
-format-background = #59B3D3
-format-foreground = #e0ebed
+format-background = #C9ADBC
+format-foreground = #cadde7
 format-padding = 1
 label =  %output:0:25:...%
 click-left = i3-msg -q 'exec --no-startup-id ~/dotfiles/scripts/themeSelect.sh'
@@ -218,7 +217,7 @@ format-connected-background = ${colors.inactive}
 format-disconnected = <label-disconnected>
 format-disconnected-padding = 2
 label-disconnected = 睊 0
-label-disconnected-foreground = ${colors.inactive}
+format-disconnected-background = ${colors.inactive}
 
 [module/eth]
 type = internal/network

@@ -6,7 +6,7 @@
     "editor.renderWhitespace": "boundary",
     "editor.minimap.enabled": false,
     "editor.lineNumbers": "relative",
-    "explorer.autoReveal": false,
+    "explorer.autoReveal": true,
     "breadcrumbs.enabled": true,
     "diffEditor.ignoreTrimWhitespace": false,
     "debug.toolBarLocation": "docked",
@@ -31,5 +31,5 @@
         ],
         "compounds": []
     },
-    "workbench.colorTheme": "Wal"
+    "workbench.colorTheme": "Material Theme High Contrast"
 }
