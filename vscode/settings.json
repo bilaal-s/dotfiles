@@ -1,5 +1,5 @@
 {
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 0,
     "window.titleBarStyle": "custom",
     "workbench.sideBar.location": "right",
     "workbench.editor.enablePreview": false,
@@ -31,5 +31,5 @@
         ],
         "compounds": []
     },
-    "workbench.colorTheme": "Material Theme High Contrast"
+    "workbench.colorTheme": "Monokai"
 }

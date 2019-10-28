@@ -65,7 +65,7 @@ ZSH_THEME="bureau"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git-noalias vi-mode
+  git-noalias
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -85,7 +85,7 @@ source $ZSH/oh-my-zsh.sh
 # fi
 
 # Enable vi mode
-bindkey -v
+#bindkey -v
 
 # Make Vi mode transitions faster (KEYTIMEOUT is in hundredths of a second)
 export KEYTIMEOUT=1

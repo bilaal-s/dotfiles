@@ -17,12 +17,12 @@
 ;==========================================================
 
 [colors]
-background = #0E1A29
-foreground = #cadde7
-active = #a68493
-inactive = #725b65
-highlight = #D99BAB
-error = #C9ADBC
+background = #0F201D
+foreground = #d4d3d6
+active = #526c37
+inactive = #384a26
+highlight = #59675A
+error = #7D7B7F
 
 [bar/main]
 dpi = ${xrdb:Xft.dpi}
@@ -50,7 +50,7 @@ module-margin-right = 0
 font-0 = "Iosevka Nerd Font:style=Regular:pixelsize=10;2"
 font-1 = "DejaVuSansMono Nerd Font:style=Book"
 
-modules-left = i3 gap mood mpd
+modules-left = i3 gap mood gap mpd
 modules-center = date
 modules-right = xbacklight gap pulseaudio gap cpu memory filesystem gap wlan eth battery temperature gap powermenu
 
@@ -72,8 +72,8 @@ type = custom/script
 exec = cat ~/.config/polybar/mood
 interval = 1
 format = <label>
-format-background = #C9ADBC
-format-foreground = #cadde7
+format-background = #7D7B7F
+format-foreground = #d4d3d6
 format-padding = 1
 label =  %output:0:25:...%
 click-left = i3-msg -q 'exec --no-startup-id ~/dotfiles/scripts/themeSelect.sh'
@@ -129,18 +129,6 @@ label-mode-padding = 1
 label-mode-foreground = ${colors.foreground}
 label-mode-background = ${colors.highlight}
 
-# workspace labels
-# ws-icon-0 = 1;
-# ws-icon-1 = 2;
-# ws-icon-2 = 3;
-# ws-icon-3 = 4;
-# ws-icon-4 = 5;
-# ws-icon-5 = 6;
-# ws-icon-6 = poly
-# ws-icon-7 = 8;
-# ws-icon-8 = 9;
-# ws-icon-9 = 10;
-
 ; focused = Active workspace on focused monitor
 label-focused = %name%
 label-focused-background = ${colors.active}
@@ -167,15 +155,23 @@ label-urgent-padding = 2
 
 [module/mpd]
 type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
+format-online =  <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
 
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
+format-playing-padding = 1
+format-playing-background = ${colors.active}
+format-paused-padding = 1
+format-paused-background = ${colors.active}
+format-stopped-padding = 1
+format-stopped-background = ${colors.active}
 
-label-song-maxlen = 25
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
+
+label-song = %title%
+label-song-maxlen = 35
 label-song-ellipsis = true
 
 [module/xbacklight]
@@ -348,7 +344,7 @@ label-separator = |
 label-separator-foreground = ${colors.foreground}
 
 menu-0-0 = suspend
-menu-0-0-exec = ~/dotfiles/lockAndSuspend.sh
+menu-0-0-exec = systemctl suspend
 menu-0-1 = power off
 menu-0-1-exec = systemctl poweroff
 

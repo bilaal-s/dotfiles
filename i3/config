@@ -100,14 +100,14 @@ gaps right 4
 #gaps outer 0
 font pango:Iosevka Nerd Font 10
 
-set $coloract "#a68493"
-set $colorin "#725b65"
+set $coloract "#526c37"
+set $colorin "#384a26"
 
-set_from_resource $color15 i3wm.color15 "#cadde7"
-set_from_resource $split i3wm.color13 "#90B0CE"
-set_from_resource $coloru i3wm.color5 "#90B0CE"
-set_from_resource $color0 i3wm.color0 "#0E1A29"
-set_from_resource $color8 i3wm.color8 "#8d9aa1"
+set_from_resource $color15 i3wm.color15 "#d4d3d6"
+set_from_resource $split i3wm.color13 "#949845"
+set_from_resource $coloru i3wm.color5 "#949845"
+set_from_resource $color0 i3wm.color0 "#0F201D"
+set_from_resource $color8 i3wm.color8 "#949395"
 
 # class                 border    backgr    text    indicator child_border
 client.focused          $coloract $coloract $color15 $coloract $coloract
