@@ -100,14 +100,14 @@ gaps right 4
 #gaps outer 0
 font pango:Iosevka Nerd Font 10
 
-set $coloract "#526c37"
-set $colorin "#384a26"
+set $coloract "#2f6761"
+set $colorin "#204742"
 
-set_from_resource $color15 i3wm.color15 "#d4d3d6"
-set_from_resource $split i3wm.color13 "#949845"
-set_from_resource $coloru i3wm.color5 "#949845"
-set_from_resource $color0 i3wm.color0 "#0F201D"
-set_from_resource $color8 i3wm.color8 "#949395"
+set_from_resource $color15 i3wm.color15 "#a6bdb9"
+set_from_resource $split i3wm.color13 "#D6A36A"
+set_from_resource $coloru i3wm.color5 "#D6A36A"
+set_from_resource $color0 i3wm.color0 "#0d130f"
+set_from_resource $color8 i3wm.color8 "#748481"
 
 # class                 border    backgr    text    indicator child_border
 client.focused          $coloract $coloract $color15 $coloract $coloract
@@ -127,7 +127,7 @@ for_window [title="sxiv"] floating enable
 bindsym $mod+d exec rofi -show run
 bindsym $mod+b exec google-chrome; workspace $ws1
 bindsym $mod+Return exec i3-sensible-terminal; workspace $ws2
-bindsym $mod+c exec code; workspace $ws3
+bindsym $mod+c exec code --disable-gpu; workspace $ws3
 bindsym $mod+t exec slack; workspace $ws4
 # lock
 bindsym $mod+q exec betterlockscreen -l dim
@@ -158,7 +158,7 @@ bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
 assign [class="Google-chrome"] $ws1
-assign [class="Gnome-terminal"] $ws2
+assign [class="X-terminal-emulator"] $ws2
 assign [class="Code"] $ws3
 assign [class="Slack"] $ws4
 assign [class="Nautilus"] $ws5
@@ -179,7 +179,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 exec --no-startup-id setxkbmap -option ctrl:nocaps
 exec --no-startup-id xmodmap ~/dotfiles/.xmodmaprc
 exec --no-startup-id ~/.config/wpg/wp_init.sh 
-exec compton -b --config $HOME/.config/compton.conf
+exec_always --no-startup-id pkill compton; compton -b --config $HOME/.config/compton.conf
 exec_always --no-startup-id autorandr --change && $HOME/.config/polybar/launch.sh &
 #workspace $ws1 output DP-3 DP-2
 #workspace $ws2 output DP-3 DP-2

@@ -106,8 +106,7 @@ export KEYTIMEOUT=1
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 source ~/.aliases
-source ~/.dev-env-vars
-source ~/.secret-exports
+#source ~/.secret-exports
 
 (cat ~/.config/wpg/sequences &)
 

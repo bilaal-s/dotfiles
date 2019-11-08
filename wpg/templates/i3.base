@@ -127,7 +127,7 @@ for_window [title="sxiv"] floating enable
 bindsym $mod+d exec rofi -show run
 bindsym $mod+b exec google-chrome; workspace $ws1
 bindsym $mod+Return exec i3-sensible-terminal; workspace $ws2
-bindsym $mod+c exec code; workspace $ws3
+bindsym $mod+c exec code --disable-gpu; workspace $ws3
 bindsym $mod+t exec slack; workspace $ws4
 # lock
 bindsym $mod+q exec betterlockscreen -l dim
@@ -158,7 +158,7 @@ bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
 assign [class="Google-chrome"] $ws1
-assign [class="Gnome-terminal"] $ws2
+assign [class="X-terminal-emulator"] $ws2
 assign [class="Code"] $ws3
 assign [class="Slack"] $ws4
 assign [class="Nautilus"] $ws5
@@ -179,7 +179,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 exec --no-startup-id setxkbmap -option ctrl:nocaps
 exec --no-startup-id xmodmap ~/dotfiles/.xmodmaprc
 exec --no-startup-id ~/.config/wpg/wp_init.sh 
-exec compton -b --config $HOME/.config/compton.conf
+exec_always --no-startup-id pkill compton; compton -b --config $HOME/.config/compton.conf
 exec_always --no-startup-id autorandr --change && $HOME/.config/polybar/launch.sh &
 #workspace $ws1 output DP-3 DP-2
 #workspace $ws2 output DP-3 DP-2

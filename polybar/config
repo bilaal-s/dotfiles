@@ -17,12 +17,12 @@
 ;==========================================================
 
 [colors]
-background = #0F201D
-foreground = #d4d3d6
-active = #526c37
-inactive = #384a26
-highlight = #59675A
-error = #7D7B7F
+background = #0d130f
+foreground = #a6bdb9
+active = #2f6761
+inactive = #204742
+highlight = #A2663B
+error = #3B827A
 
 [bar/main]
 dpi = ${xrdb:Xft.dpi}
@@ -72,8 +72,8 @@ type = custom/script
 exec = cat ~/.config/polybar/mood
 interval = 1
 format = <label>
-format-background = #7D7B7F
-format-foreground = #d4d3d6
+format-background = #3B827A
+format-foreground = #a6bdb9
 format-padding = 1
 label =  %output:0:25:...%
 click-left = i3-msg -q 'exec --no-startup-id ~/dotfiles/scripts/themeSelect.sh'

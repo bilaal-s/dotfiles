@@ -6,6 +6,7 @@ alias gpsh='git push'
 alias gpshf='gpsh -f'
 alias gpshb='gpsh origin $(git rev-parse --abbrev-ref HEAD)'
 alias gpshnb='gpsh --set-upstream origin $(git rev-parse --abbrev-ref HEAD) && $(echo $BROWSER) https://github.com/$(gpn)/pull/new/$(git rev-parse --abbrev-ref HEAD)'
+alias gdpshnb='gpsh --set-upstream origin $(git rev-parse --abbrev-ref HEAD) && $(echo $BROWSER) https://github.secureserver.net/$(gpn)/pull/new/$(git rev-parse --abbrev-ref HEAD)'
 alias gs='git status'
 alias gch='git checkout'
 alias gchm='gch master && gp'
@@ -30,6 +31,11 @@ gacmpshb () {
 # $1 - commit message
 gacmpshnb () {
     gacm "$1" && gpshnb
+}
+
+# $1 - commit message
+gdacmpshnb () {
+    gacm "$1" && gdpshnb
 }
 
 # $1 - commit message
