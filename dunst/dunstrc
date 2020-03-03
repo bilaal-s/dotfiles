@@ -1,6 +1,6 @@
 [colors]
-    background = "#40495f"
-    foreground = "#e8cac1"
+    background = "#19686a"
+    foreground = "#fbcccc"
 
 [global]
     ### Display ###
@@ -68,7 +68,7 @@
     frame_width = 3
 
     # Defines color of the frame around the notification window.
-    frame_color = "#5667A5"
+    frame_color = "#559964"
 
     # Define a color for the separator.
     # possible values are:
@@ -76,7 +76,7 @@
     #  * foreground: use the same color as the foreground;
     #  * frame: use the same color as the frame;
     #  * anything else will be interpreted as a X color.
-    separator_color = "#5d6a8a"
+    separator_color = "#24979b"
 
     # Sort messages by urgency.
     sort = yes

@@ -1,7 +1,7 @@
 {
     "window.zoomLevel": 0,
     "window.titleBarStyle": "custom",
-    "workbench.sideBar.location": "right",
+    "workbench.sideBar.location": "left",
     "workbench.editor.enablePreview": false,
     "editor.renderWhitespace": "boundary",
     "editor.minimap.enabled": false,
@@ -31,6 +31,8 @@
         ],
         "compounds": []
     },
-    "workbench.colorTheme": "Material Theme Palenight High Contrast",
-    "workbench.colorCustomizations": {}
+    "workbench.colorCustomizations": {},
+    "diffEditor.renderSideBySide": true,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "explorer.confirmDelete": false
 }

@@ -108,4 +108,9 @@ ebt() {
 }
 
 # goDaddy
-alias godaddy='run-docker && configure-vault && run-vpn'
+alias godaddy='run-docker && configure-vault'
+
+# FS
+mkdirc() {
+ mkdir "$1" && cd "$1" 
+}
