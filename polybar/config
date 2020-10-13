@@ -17,12 +17,12 @@
 ;==========================================================
 
 [colors]
-background = #292222
-foreground = #fbcccc
-active = #24979b
-inactive = #19686a
-highlight = #559964
-error = #33815e
+background = #2f2a39
+foreground = #e8cac1
+active = #445283
+inactive = #2f385a
+highlight = #5667A5
+error = #4D76CA
 
 [bar/main]
 dpi = ${xrdb:Xft.dpi}
@@ -62,7 +62,7 @@ cursor-scroll = ns-resize
 
 [bar/secondary]
 inherit = bar/main
-monitor = DP-2
+monitor = eDP1
 modules-left = date
 modules-center = i3
 modules-right = powermenu
@@ -72,8 +72,8 @@ type = custom/script
 exec = cat ~/.config/polybar/mood
 interval = 1
 format = <label>
-format-background = #33815e
-format-foreground = #fbcccc
+format-background = #4D76CA
+format-foreground = #e8cac1
 format-padding = 1
 label =  %output:0:25:...%
 click-left = i3-msg -q 'exec --no-startup-id ~/dotfiles/scripts/themeSelect.sh'

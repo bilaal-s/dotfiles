@@ -6,6 +6,8 @@
     "editor.renderWhitespace": "boundary",
     "editor.minimap.enabled": false,
     "editor.lineNumbers": "relative",
+    "editor.tabSize": 2,
+    "editor.smoothScrolling": true,
     "explorer.autoReveal": false,
     "breadcrumbs.enabled": true,
     "diffEditor.ignoreTrimWhitespace": false,

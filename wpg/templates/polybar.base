@@ -62,7 +62,7 @@ cursor-scroll = ns-resize
 
 [bar/secondary]
 inherit = bar/main
-monitor = DP-2
+monitor = eDP1
 modules-left = date
 modules-center = i3
 modules-right = powermenu

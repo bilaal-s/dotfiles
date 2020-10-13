@@ -1,5 +1,5 @@
 #!/bin/sh
 
-killall -q compton
+killall -q picom
 sleep 0.5
-compton --config ~/.config/compton.conf --unredir-if-possible &
+picom --config ~/.config/compton.conf --unredir-if-possible &

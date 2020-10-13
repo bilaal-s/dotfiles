@@ -100,14 +100,14 @@ gaps right 4
 #gaps outer 0
 font pango:Iosevka Nerd Font 10
 
-set $coloract "#24979b"
-set $colorin "#19686a"
+set $coloract "#445283"
+set $colorin "#2f385a"
 
-set_from_resource $color15 i3wm.color15 "#fbcccc"
-set_from_resource $split i3wm.color13 "#2ebec2"
-set_from_resource $coloru i3wm.color5 "#2d8a8c"
-set_from_resource $color0 i3wm.color0 "#292222"
-set_from_resource $color8 i3wm.color8 "#ccc1c1"
+set_from_resource $color15 i3wm.color15 "#e8cac1"
+set_from_resource $split i3wm.color13 "#5E91E3"
+set_from_resource $coloru i3wm.color5 "#5E91E3"
+set_from_resource $color0 i3wm.color0 "#2f2a39"
+set_from_resource $color8 i3wm.color8 "#a28d87"
 
 # class                 border    backgr    text    indicator child_border
 client.focused          $coloract $coloract $color15 $coloract $coloract
@@ -179,15 +179,15 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 exec --no-startup-id setxkbmap -option ctrl:nocaps
 exec --no-startup-id xmodmap ~/dotfiles/.xmodmaprc
 exec --no-startup-id ~/.config/wpg/wp_init.sh 
-exec_always --no-startup-id pkill compton; compton -b --config $HOME/.config/compton.conf
+exec_always --no-startup-id killall -q picom; picom -b --config $HOME/.config/compton.conf
 exec_always --no-startup-id autorandr --change && $HOME/.config/polybar/launch.sh &
-#workspace $ws1 output DP-3 DP-2
-#workspace $ws2 output DP-3 DP-2
-#workspace $ws3 output DP-3 DP-2
-#workspace $ws4 output DP-3 DP-2
-#workspace $ws5 output DP-3 DP-2
-#workspace $ws6 output DP-3 DP-2
-#workspace $ws7 output DP-3 DP-2
-#workspace $ws8 output DP-3 DP-2
-#workspace $ws9 output DP-3 DP-2
-#workspace $ws10 output DP-2
+workspace $ws1 output HDMI1 eDP1
+workspace $ws2 output HDMI1 eDP1
+workspace $ws3 output HDMI1 eDP1
+workspace $ws4 output HDMI1 eDP1
+workspace $ws5 output HDMI1 eDP1
+workspace $ws6 output HDMI1 eDP1
+workspace $ws7 output HDMI1 eDP1
+workspace $ws8 output HDMI1 eDP1
+workspace $ws9 output HDMI1 eDP1
+workspace $ws10 output eDP1
