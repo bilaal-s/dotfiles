@@ -1,12 +1,12 @@
 # Git
-alias gpn="git config --get remote.origin.url | grep git | cut -d ':' -f2 | cut -d '.' -f1"
+# alias gpn="git config --get remote.origin.url | grep git | cut -d ':' -f2 | cut -d '.' -f1"
 alias gp='git pull'
 alias gr='git rebase'
 alias gpsh='git push'
 alias gpshf='gpsh -f'
 alias gpshb='gpsh origin $(git rev-parse --abbrev-ref HEAD)'
 alias gpshnb='gpsh --set-upstream origin $(git rev-parse --abbrev-ref HEAD) && $(echo $BROWSER) https://github.com/$(gpn)/pull/new/$(git rev-parse --abbrev-ref HEAD)'
-alias gdpshnb='gpsh --set-upstream origin $(git rev-parse --abbrev-ref HEAD) && $(echo $BROWSER) https://github.secureserver.net/$(gpn)/pull/new/$(git rev-parse --abbrev-ref HEAD)'
+# alias gdpshnb='gpsh --set-upstream origin $(git rev-parse --abbrev-ref HEAD) && $(echo $BROWSER) https://github.secureserver.net/$(gpn)/pull/new/$(git rev-parse --abbrev-ref HEAD)'
 alias gs='git status'
 alias gch='git checkout'
 alias gchm='gch master && gp'
@@ -34,9 +34,9 @@ gacmpshnb () {
 }
 
 # $1 - commit message
-gdacmpshnb () {
-    gacm "$1" && gdpshnb
-}
+# gdacmpshnb () {
+#     gacm "$1" && gdpshnb
+# }
 
 # $1 - commit message
 # gcampsn () {
@@ -81,7 +81,7 @@ gitrelease() {
 alias dockerStopAll="docker stop $(docker ps -a -q)";
 alias dockerRmAll="docker rm $(docker ps -a -q)";
 alias dockerRmVolumes="docker volume rm $(docker volume ls -q -f dangling=true)";
-alias dockerRmConsul="sudo rm -rf /consul/*";
+# alias dockerRmConsul="sudo rm -rf /consul/*";
 alias dockerRmDanglingImages="docker rmi $(docker images -aq --filter dangling=true)";
 alias dockerCleanUp="dockerRmConsul; dockerStopAll; dockerRmAll; dockerRmVolumes; dockerRmDanglingImages; docker network prune";
 
@@ -108,7 +108,7 @@ ebt() {
 }
 
 # goDaddy
-alias godaddy='run-docker && configure-vault'
+# alias godaddy='run-docker && configure-vault'
 
 # FS
 mkdirc() {

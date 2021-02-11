@@ -4,13 +4,13 @@
 export PATH=~/.local/bin:~/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/$USER/.oh-my-zsh"
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="bureau"
+ZSH_THEME="clean"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -108,16 +108,17 @@ export KEYTIMEOUT=1
 source ~/.aliases
 #source ~/.secret-exports
 
-(cat ~/.config/wpg/sequences &)
+# (cat ~/.config/wpg/sequences &)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export EDITOR=nvim
-export BROWSER='google-chrome'
+# export BROWSER='google-chrome' # linux
+export BROWSER='open -a "Google Chrome" --args'
 
-export GDK_SCALE=1
-export GDK_DPI_SCALE=1
-export QT_AUTO_SCREEN_SCALE_FACTOR=1
+# export GDK_SCALE=1
+# export GDK_DPI_SCALE=1
+# export QT_AUTO_SCREEN_SCALE_FACTOR=1
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
