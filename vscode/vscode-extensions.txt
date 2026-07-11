@@ -1,3 +1,0 @@
-kleber-swf.ocean-dark-extended
-ms-vsliveshare.vsliveshare
-vscodevim.vim
