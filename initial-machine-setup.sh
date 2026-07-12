@@ -11,8 +11,8 @@ source ~/.zshrc
 
 # Brew (Windows Subsystem for Linux)
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-echo >> /home/$USER/.zshrc
-echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"' >> /home/$USER/.zshrc
+echo >>/home/$USER/.zshrc
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"' >>/home/$USER/.zshrc
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
 sudo apt-get install build-essential bubblewrap
 
@@ -32,7 +32,15 @@ brew install fd
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 
+# Claude code
+curl -fsSL https://claude.ai/install.sh | bash
+
+# NVM
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.5/install.sh | bash
+
 # Docker
+# https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
+
 # docker-compose
 # Terraform
 # AWS CLI
