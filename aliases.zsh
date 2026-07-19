@@ -39,12 +39,12 @@ gacmpshnb () {
 #alias dockerCleanUp="dockerStopAll; dockerRmAll; dockerRmVolumes; dockerRmDanglingImages; docker network prune";
 
 # Docker compose
-alias dc='docker-compose'
-alias dcp='docker-compose pull'
-alias dcps='docker-compose ps'
-alias dcu='docker-compose up'
-alias dcs='docker-compose stop'
-alias dcd='docker-compose down'
+alias dc='docker compose'
+alias dcp='docker compose pull'
+alias dcps='docker compose ps'
+alias dcu='docker compose up'
+alias dcs='docker compose stop'
+alias dcd='docker compose down'
 
 # FS
 mkdirc() {
