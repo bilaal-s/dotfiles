@@ -40,7 +40,13 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.5/install.sh | bash
 
 # Docker
 # https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
+# for wsl: sudo usermod -aG docker $USER
 
-# docker-compose
 # Terraform
 # AWS CLI
+
+brew install gh
+
+# AI tools
+curl -fsSL https://pi.dev/install.sh | sh
+brew install --cask codex
