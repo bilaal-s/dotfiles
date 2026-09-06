@@ -31,6 +31,7 @@ brew install ripgrep
 brew install fd
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
+ln -sfn ~/dotfiles/nvim/lua/plugins/colorscheme.lua ~/.config/nvim/lua/plugins/colorscheme.lua
 
 # Claude code
 curl -fsSL https://claude.ai/install.sh | bash
