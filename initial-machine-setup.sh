@@ -1,6 +1,6 @@
 # Zsh
 brew install zsh
-echo "/home/linuxbrew/.linuxbrew/bin/zsh" | sudo tee -a /etc/shells
+#echo "/home/linuxbrew/.linuxbrew/bin/zsh" | sudo tee -a /etc/shells
 chsh -s $(which zsh)
 
 # Oh my zsh
@@ -9,16 +9,20 @@ ln -s ~/dotfiles/aliases.zsh ~/.oh-my-zsh/custom/
 ln -s ~/dotfiles/.zshrc ~/.zshrc
 source ~/.zshrc
 
-# Brew (Windows Subsystem for Linux)
+# Brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-echo >>/home/$USER/.zshrc
-echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"' >>/home/$USER/.zshrc
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
-sudo apt-get install build-essential bubblewrap
+
+# Brew (Windows Subsystem for Linux)
+#echo >>/home/$USER/.zshrc
+#echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"' >>/home/$USER/.zshrc
+#eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
+#sudo apt-get install build-essential bubblewrap
 
 # tmux
 brew install tmux
 cp ~/dotfiles/.tmux.conf ~/.tmux.conf # sym link doesn't work for some reason
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Fzf
 brew install fzf
